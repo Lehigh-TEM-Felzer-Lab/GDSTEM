@@ -26,17 +26,17 @@
     <solnb>414.5</solnb>
     <avlnb>1.9</avlnb>
 
-    <vegcmax1b>10.1</vegcmax1b>
+    <vegcmax1b>10.15</vegcmax1b>
     <vegtauleaf>2.0</vegtauleaf>
     <vegtausapwood>39.0</vegtausapwood>
     <vegtauheartwood>62.0</vegtauheartwood>
     <vegtauroot>1.0</vegtauroot>
     <vegtauseed>1.0</vegtauseed>
     <vegkra>0.2</vegkra>
-    <microbekdb>0.0198</microbekdb>
+    <microbekdb>0.0195</microbekdb>
     <microbelcclnc>67.4</microbelcclnc>
     <microbepropftos>0.2000</microbepropftos>
-    <vegnmax1b>435.0</vegnmax1b>
+    <vegnmax1b>450.0</vegnmax1b>
     <microbenupb>18.7</microbenupb>
     <soilnloss>0.05</soilnloss>
     <soildenitr>1.0</soildenitr>
