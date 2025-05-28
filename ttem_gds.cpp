@@ -1123,10 +1123,18 @@ void Ttem45::cropDynamics( const int& pdm, const int& pdyr, const double& nmax_g
 
   dtmax = 0.03333;
 
+#ifndef CALIBRATE_TEM
   ag.fertflag = 1;
   ag.tillflag = 0;
-  ag.irrgflag = 1;
-
+  if(ag.state == 1 || ag.state == 3)
+  {
+    ag.irrgflag = 1;
+  }
+  else
+  {
+    ag.irrgflag = 0;
+  }
+#endif
 
   #ifdef DEBUG_CTEM
     move(DEBUG_ROW,1);
