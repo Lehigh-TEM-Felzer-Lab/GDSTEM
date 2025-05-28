@@ -441,7 +441,9 @@ int main()
        {
         for( i = 0; i < (startval); ++i )
         {
+cout << "before reading mxcohrt" << endl;
           gisend = mxcohrtdat[0].getdel( ifnumchrts );
+cout << "after reading mxcohrt" << endl;
           mxtot[0][i] = mxcohrtdat[0].total;
         }
        }
@@ -490,7 +492,9 @@ int main()
         {
         for( ichrt = 0; ichrt < mxtot[0][i]; ++ichrt )
         {
+cout << "before reading lulccohrt" << endl;
          gisend = lulcdat[0][ichrt].getdel( iflulc );
+cout << "after reading lulccohrt" << endl;
          l=l+1;
 /*         if(istatetype == 0) {
          if(istateflag > 0)
@@ -1518,7 +1522,6 @@ void initRun( void )
   telmnt[0].nfert.nfertpastureend = telmnt[0].tem.goxml.getXMLstring( telmnt[0].tem.gofile, "gofile", "nfertpastureend" );
   if( telmnt[0].nfert.tnfertpastureflag == 1 ) { flog1 << " transient nfertpasture dataset: " << telmnt[0].nfert.nfertpasturefname + telmnt[0].nfert.nfertpastureend << endl; }
   else { flog1 << " long-term average nfertpasture dataset: " << telmnt[0].nfert.nfertpasturefname << endl; }
-
 
 //commenting out to make wind transient  
   // telmnt[0].clm.iws10fname = telmnt[0].tem.goxml.getXMLstring( telmnt[0].tem.gofile, "gofile", "iws10fname" );

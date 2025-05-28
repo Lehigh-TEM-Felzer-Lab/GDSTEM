@@ -178,6 +178,7 @@ void Biome45::getvtype( const string& ecd )
   {
 
     vegtype = getXMLtemvegNode( infile, "communityECD" );
+//    cout << "dv and vegtype = " << dv << " " << vegtype << endl;
 
     if( vegtype > NUMVEG )
     {
@@ -209,6 +210,7 @@ void Biome45::getvtype( const string& ecd )
                                                   "communityECD",
                                                   tempString.str(),
                                                   vegtype );
+//      cout << "subtupe = " << ez << " " << dtype << " " << subtype[ez][dtype] << " " << pcttype[ez][dtype] << endl;
     }
 
     endXMLtvegNode( infile );
