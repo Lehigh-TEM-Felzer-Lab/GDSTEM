@@ -35,7 +35,7 @@
 // Maximum number of community types for TEM parameters
 #ifndef MAXCMNT_CONST
 #define MAXCMNT_CONST
-  const int MAXCMNT = 18;
+  const int MAXCMNT = 22;
 #endif
 
 // Maximum number of ecosystem (i.e. carbon and nitrogen)
