@@ -690,8 +690,8 @@
     <pcttype1>55.00</pcttype1>
     <subtype2>16</subtype2>
     <pcttype2>25.00</pcttype2>
-    <subtype3>5</subtype2>
-    <pcttype3>20.00</pcttype2>
+    <subtype3>5</subtype3>
+    <pcttype3>20.00</pcttype3>
     <subtype4>-99</subtype4>
     <pcttype4>0.00</pcttype4>
     <subtype5>-99</subtype5>
@@ -707,8 +707,8 @@
     <pcttype1>55.00</pcttype1>
     <subtype2>16</subtype2>
     <pcttype2>25.00</pcttype2>
-    <subtype3>6</subtype2>
-    <pcttype3>20.00</pcttype2>
+    <subtype3>6</subtype3>
+    <pcttype3>20.00</pcttype3>
     <subtype4>-99</subtype4>
     <pcttype4>0.00</pcttype4>
     <subtype5>-99</subtype5>
@@ -724,8 +724,8 @@
     <pcttype1>55.00</pcttype1>
     <subtype2>16</subtype2>
     <pcttype2>25.00</pcttype2>
-    <subtype3>7</subtype2>
-    <pcttype3>20.00</pcttype2>
+    <subtype3>7</subtype3>
+    <pcttype3>20.00</pcttype3>
     <subtype4>-99</subtype4>
     <pcttype4>0.00</pcttype4>
     <subtype5>-99</subtype5>
@@ -741,8 +741,8 @@
     <pcttype1>55.00</pcttype1>
     <subtype2>16</subtype2>
     <pcttype2>25.00</pcttype2>
-    <subtype3>12</subtype2>
-    <pcttype3>20.00</pcttype2>
+    <subtype3>12</subtype3>
+    <pcttype3>20.00</pcttype3>
     <subtype4>-99</subtype4>
     <pcttype4>0.00</pcttype4>
     <subtype5>-99</subtype5>
@@ -758,8 +758,8 @@
     <pcttype1>55.00</pcttype1>
     <subtype2>16</subtype2>
     <pcttype2>25.00</pcttype2>
-    <subtype3>13</subtype2>
-    <pcttype3>20.00</pcttype2>
+    <subtype3>13</subtype3>
+    <pcttype3>20.00</pcttype3>
     <subtype4>-99</subtype4>
     <pcttype4>0.00</pcttype4>
     <subtype5>-99</subtype5>
@@ -775,8 +775,8 @@
     <pcttype1>55.00</pcttype1>
     <subtype2>16</subtype2>
     <pcttype2>25.00</pcttype2>
-    <subtype3>14</subtype2>
-    <pcttype3>20.00</pcttype2>
+    <subtype3>14</subtype3>
+    <pcttype3>20.00</pcttype3>
     <subtype4>-99</subtype4>
     <pcttype4>0.00</pcttype4>
     <subtype5>-99</subtype5>
@@ -950,6 +950,7 @@
     <subtype4>-99</subtype4>
     <pcttype4>0.00</pcttype4>
     <subtype5>-99</subtype5>
+    <pcttype5>0.00</pcttype5>
   </temveg>
 
   <temveg type = "57"
@@ -1018,6 +1019,7 @@
     <pcttype4>0.00</pcttype4>
     <subtype5>-99</subtype5>
     <pcttype5>0.00</pcttype5>
+ </temveg>
 
   <temveg type = "61"
     description = "Moist Pasture"
@@ -1034,7 +1036,5 @@
     <pcttype4>0.00</pcttype4>
     <subtype5>-99</subtype5>
     <pcttype5>0.00</pcttype5>
-
-
   </temveg>
-
+</communityECD>
