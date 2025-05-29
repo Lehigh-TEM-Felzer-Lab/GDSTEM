@@ -51,7 +51,7 @@ class Elmnt45
      float col;
 
      // Area of element
-     long carea;
+     float carea;
 
      // Continent location of element
      string contnent;

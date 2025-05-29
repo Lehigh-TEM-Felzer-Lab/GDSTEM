@@ -492,9 +492,7 @@ cout << "after reading mxcohrt" << endl;
         {
         for( ichrt = 0; ichrt < mxtot[0][i]; ++ichrt )
         {
-cout << "before reading lulccohrt" << endl;
          gisend = lulcdat[0][ichrt].getdel( iflulc );
-cout << "after reading lulccohrt" << endl;
          l=l+1;
 /*         if(istatetype == 0) {
          if(istateflag > 0)
@@ -3474,7 +3472,7 @@ void updateTTEMGridCell( const int& pdyr,
             INITIALIZE TEM STATE FOR NEW COHORTS
 ************************************************************* */
 
-//   cout << "year in updateTTEM = " <<  pdyr << endl;
+//   cout << "year in updateTTEM = " <<  pdyr << " " << telmnt[0].maxcohorts << endl;
   if( telmnt[0].maxcohorts > telmnt[0].prvmxcohrts )
   {
     for ( ichrt = telmnt[0].prvmxcohrts;

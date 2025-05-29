@@ -108,7 +108,7 @@ int Biome45::getVegMosaic( const int& tveg )
 
 double Biome45::getVegSubarea( const int& tveg,
                                const int& dtype,
-                               const int& carea )
+                               const float& carea )
 {
   int mez;
   double sarea;

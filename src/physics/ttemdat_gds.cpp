@@ -116,7 +116,7 @@ int Temdat45::getdel( FILE* ifile )
   char tmpregion[40];
 
   temend = fscanf( ifile,
-                   "%f,%f, %s ,%d,%d,%d,%d,%d,%d,%lf,%d,%ld,%ld,%d,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf, %s",
+                   "%f,%f, %s ,%d,%d,%d,%d,%d,%d,%lf,%d,%f,%f,%d,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf, %s",
                    &col,
                    &row,
                    tmpvarname,
@@ -205,8 +205,10 @@ void Temdat45::out( ofstream& ofile,
                      const int& cmnt,
                      const double& psiplusc,
                      const int& qlcon,
-                     const long& carea,
-                     const long& subarea,
+//                     const long& carea,
+                     const float& carea,
+//                     const long& subarea,
+                     const float& subarea,
                      const int& year,
                      double mon[CYCLE],
                      const string& region )
@@ -253,8 +255,8 @@ void Temdat45::out( ofstream& ofile,
   ofile << setprecision( 0 ) << cmnt << ' ';
   ofile << setprecision( 2 ) << psiplusc << ' ';
   ofile << setprecision( 0 ) << qlcon << ' ';
-  ofile << setprecision( 0 ) << carea << ' ';
-  ofile << setprecision( 0 ) << subarea << ' ';
+  ofile << setprecision( 2 ) << carea << ' ';
+  ofile << setprecision( 2 ) << subarea << ' ';
   ofile << setprecision( 0 ) << year << ' ';
 
   ofile << setprecision( 1 ) << predtotl << ' ';
@@ -291,8 +293,10 @@ void Temdat45::outdel( ofstream& ofile,
                         const int& cmnt,
                         const double& psiplusc,
                         const int& qlcon,
-                        const long& carea,
-                        const long& subarea,
+//                        const long& carea,
+                        const float& carea,
+//                        const long& subarea,
+                        const float& subarea,
                         const int& year,
                         double mon[CYCLE],
                         const string& region )
@@ -339,8 +343,8 @@ void Temdat45::outdel( ofstream& ofile,
   ofile << setprecision( 0 ) << cmnt << ",";
   ofile << setprecision( 2 ) << psiplusc << ",";
   ofile << setprecision( 0 ) << qlcon << ",";
-  ofile << setprecision( 0 ) << carea << ",";
-  ofile << setprecision( 0 ) << subarea << ",";
+  ofile << setprecision( 2 ) << carea << ",";
+  ofile << setprecision( 2 ) << subarea << ",";
   ofile << setprecision( 0 ) << year << ",";
 
   ofile << setprecision( 1 ) << predtotl << ",";
@@ -377,8 +381,10 @@ void Temdat45::pctout( ofstream& ofile,
                         const int& cmnt,
                         const double& psiplusc,
                         const int& qlcon,
-                        const long& carea,
-                        const long& subarea,
+//                        const long& carea,
+                        const float& carea,
+//                        const long& subarea,
+                        const float& subarea,
                         const int& year,
                         double mon[CYCLE],
                         const string& region )
@@ -426,8 +432,8 @@ void Temdat45::pctout( ofstream& ofile,
   ofile << setprecision( 2 ) << ' ';
   ofile << psiplusc << ' ';
   ofile << setprecision( 0 ) << qlcon << ' ';
-  ofile << setprecision( 0 ) << carea << ' ';
-  ofile << setprecision( 0 ) << subarea << ' ';
+  ofile << setprecision( 2 ) << carea << ' ';
+  ofile << setprecision( 2 ) << subarea << ' ';
   ofile << setprecision( 0 ) << year << ' ';
 
   ofile << setprecision( 2 ) << predtotl << ' ';
@@ -464,8 +470,10 @@ void Temdat45::poutdel( ofstream& ofile,
                          const int& cmnt,
                          const double& psiplusc,
                          const int& qlcon,
-                         const long& carea,
-                         const long& subarea,
+//                         const long& carea,
+                         const float& carea,
+//                         const long& subarea,
+                         const float& subarea,
                          const int& year,
                          double mon[CYCLE],
                          const string& region )
@@ -512,8 +520,8 @@ void Temdat45::poutdel( ofstream& ofile,
   ofile << setprecision( 0 ) << cmnt << ",";
   ofile << setprecision( 2 ) << psiplusc << ",";
   ofile << setprecision( 0 ) << qlcon << ",";
-  ofile << setprecision( 0 ) << carea << ",";
-  ofile << setprecision( 0 ) << subarea << ",";
+  ofile << setprecision( 2 ) << carea << ",";
+  ofile << setprecision( 2 ) << subarea << ",";
   ofile << setprecision( 0 ) << year << ",";
 
   ofile << setprecision( 2 ) << predtotl << ",";

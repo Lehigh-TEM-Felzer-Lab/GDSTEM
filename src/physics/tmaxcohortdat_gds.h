@@ -40,7 +40,7 @@ class MaxCohortdat45
                const float& col,
                const float& row,
                const string& varname,
-               const long& carea,
+               const float& carea,
                const int& year,
                const int& total,
                const string& contnent );
@@ -49,7 +49,7 @@ class MaxCohortdat45
                   const float& col,
                   const float& row,
                   const string& varname,
-                  const long& carea,
+                  const float& carea,
                   const int& year,
                   const int& total,
                   const string& contnent );
@@ -60,7 +60,7 @@ class MaxCohortdat45
 ************************************************************* */
 
      // area covered by grid cell (sq. km)
-     long carea;
+     float carea;
 
      // column or longitude of grid cell (degrees)
      float col;

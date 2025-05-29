@@ -93,7 +93,7 @@ int Soildat45::getdel( FILE* infile )
   char tmpcontnent[80];
 
   soilend = fscanf( infile,
-                    "%f,%f, %s ,%ld,%lf,%lf,%lf,%d, %s , %s ",
+                    "%f,%f, %s ,%f,%lf,%lf,%lf,%d, %s , %s ",
                     &col,
                     &row,
                     tmpvarname,
@@ -124,7 +124,7 @@ void Soildat45::out( ofstream& ofile,
                       const float& col,
                       const float& row,
                       const string& varname,
-                      const long& carea,
+                      const float& carea,
                       const double& pctsand,
                       const double& pctsilt,
                       const double& pctclay,
@@ -140,7 +140,7 @@ void Soildat45::out( ofstream& ofile,
   ofile << col << ' ';
   ofile << row << ' ';
   ofile << varname << ' ';
-  ofile << setprecision( 0 ) << carea << ' ';
+  ofile << setprecision( 2 ) << carea << ' ';
   ofile << setprecision( 2 ) << pctsand << ' ';
   ofile << pctsilt << ' ';
   ofile << pctclay << ' ';
@@ -162,7 +162,7 @@ void Soildat45::outdel( ofstream& ofile,
                          const float& col,
                          const float& row,
                          const string& varname,
-                         const long& carea,
+                         const float& carea,
                          const double& pctsand,
                          const double& pctsilt,
                          const double& pctclay,
@@ -178,7 +178,7 @@ void Soildat45::outdel( ofstream& ofile,
   ofile << col << ",";
   ofile << row << ", ";
   ofile << varname << " ,";
-  ofile << setprecision( 0 ) << carea << ",";
+  ofile << setprecision( 2 ) << carea << ",";
   ofile << setprecision( 2 ) << pctsand << ",";
   ofile << pctsilt << ",";
   ofile << pctclay << ",";

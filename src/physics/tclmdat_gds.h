@@ -46,7 +46,7 @@ class Clmdat45
                const float& col,
                const float& row,
                const string& varname,
-               const int& carea,
+               const float& carea,
                const int& year,
                double mon[CYCLE],
                const string& contnent );
@@ -55,7 +55,7 @@ class Clmdat45
                   const float& col,
                   const float& row,
                   const string& varname,
-                  const int& carea,
+                  const float& carea,
                   const int& year,
                   double mon[CYCLE],
                   const string& contnent );
@@ -64,7 +64,7 @@ class Clmdat45
                   const float& col,
                   const float& row,
                   const string& varname,
-                  const int& carea,
+                  const float& carea,
                   const int& year,
                   double mon[CYCLE],
                   const string& contnent );
@@ -73,7 +73,7 @@ class Clmdat45
                    const float& col,
                    const float& row,
                    const string& varname,
-                   const int& carea,
+                   const float& carea,
                    const int& year,
                    double mon[CYCLE],
                    const string& contnent );
@@ -93,7 +93,7 @@ class Clmdat45
      string varname;
 
      // area covered by grid cell (sq. km)
-     int carea;
+     float carea;
 
       // date (year) of data
      //long year;

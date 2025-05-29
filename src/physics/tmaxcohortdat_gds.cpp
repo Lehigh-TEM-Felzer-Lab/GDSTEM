@@ -26,6 +26,7 @@ Modifications:
 
   using std::ios;
   using std::endl;
+  using std::cout;
 
 #include<fstream>
 
@@ -92,7 +93,7 @@ int MaxCohortdat45::getdel( FILE* infile )
   char tmpvarname[40];
   char tmpcontnent[40];
 
-  chrtend = fscanf( infile,"%f,%f, %s ,%ld,%d,%d, %s",
+  chrtend = fscanf( infile,"%f,%f, %s ,%f,%d,%d, %s",
                    &col,
                    &row,
                    tmpvarname,
@@ -104,6 +105,7 @@ int MaxCohortdat45::getdel( FILE* infile )
   varname = tmpvarname;
   contnent = tmpcontnent;
 
+  cout << "mxchrt = " << total << endl;
   return chrtend;
 
 };
@@ -119,7 +121,7 @@ void MaxCohortdat45::out( ofstream& ofile,
                            const float& col,
                            const float& row,
                            const string& varname,
-                           const long& carea,
+                           const float& carea,
                            const int& year,
                            const int& total,
                            const string& contnent )
@@ -151,7 +153,7 @@ void MaxCohortdat45::outdel( ofstream& ofile,
                               const float& col,
                               const float& row,
                               const string& varname,
-                              const long& carea,
+                              const float& carea,
                               const int& year,
                               const int& total,
                               const string& contnent )

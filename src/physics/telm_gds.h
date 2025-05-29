@@ -155,7 +155,8 @@ class Telm45
      // Mean annual air temperature
      double avetair[MAXRTIME];
 
-     long carea;
+//     long carea;
+     float carea;
 
      double climate[NUMATMS][CYCLE][MAXRTIME];
      double adep[1][MAXRTIME];
@@ -220,7 +221,8 @@ class Telm45
 
      float row;
 
-     long subarea;
+//     long subarea;
+     float subarea;
 
      Ttem45 tem;
 
@@ -249,7 +251,8 @@ class Telm45
 
   private:
 
-     int temgisqc( const long& subarea,
+//     int temgisqc( const long& subarea,
+     int temgisqc( const float& subarea,
 		           const double& pctsand,
                    const double& pctsilt,
                    const double& pctclay,

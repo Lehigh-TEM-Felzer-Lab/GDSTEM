@@ -38,7 +38,7 @@ class Lulcdat45
                const int& icohort,
                const int& isrccohort,
                const int& standage,
-               const long& chrtarea,
+               const float& chrtarea,
                const int& potveg,
                const int& currentveg,
                const int& subtype,
@@ -55,7 +55,7 @@ class Lulcdat45
                   const int& icohort,
                   const int& isrccohort,
                   const int& standage,
-                  const long& chrtarea,
+                  const float& chrtarea,
                   const int& potveg,
                   const int& currentveg,
                   const int& subtype,
@@ -81,7 +81,7 @@ class Lulcdat45
      int agstate;
 
      // area of a cohort within a grid cell
-     long chrtarea;
+     float chrtarea;
 
      // column or longitude of grid cell (degrees)
      float col;

@@ -105,7 +105,7 @@ int Clmdat45::getdel( FILE* ifile )
   char tempcontnent[40];
 
   clmend = fscanf( ifile,
-                   "%f,%f, %s ,%d,%d,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf, %s",
+                   "%f,%f, %s ,%f,%d,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf, %s",
                    &col,
                    &row,
                    tempvarname,
@@ -147,7 +147,7 @@ void Clmdat45::out( ofstream& ofile,
                      const float& col,
                      const float& row,
                      const string& varname,
-                     const int& carea,
+                     const float& carea,
                      const int& year,
                      double mon[CYCLE],
                      const string& contnent )
@@ -182,7 +182,7 @@ void Clmdat45::out( ofstream& ofile,
   ofile << col << ' ';
   ofile << setprecision( 1 ) << row << ' ';
   ofile << varname << ' ';
-  ofile << setprecision( 0 ) << carea << ' ';
+  ofile << setprecision( 2 ) << carea << ' ';
   ofile << setprecision( 0 ) << year << ' ';
 
   ofile << setprecision( 1 ) << predtotl << ' ';
@@ -210,7 +210,7 @@ void Clmdat45::outdel( ofstream& ofile,
                         const float& col,
                         const float& row,
                         const string& varname,
-                        const int& carea,
+                        const float& carea,
                         const int& year,
                         double mon[CYCLE],
                         const string& contnent )
@@ -246,7 +246,7 @@ void Clmdat45::outdel( ofstream& ofile,
   ofile << col << ",";
   ofile << setprecision( 4 ) << row << ", ";
   ofile << varname << " ,";
-  ofile << setprecision( 0 ) << carea << ",";
+  ofile << setprecision( 2 ) << carea << ",";
   ofile << setprecision( 0 ) << year << ",";
   ofile << setprecision( 1 ) << predtotl << ",";
   ofile << setprecision( 1 ) << predmax << ",";
@@ -274,7 +274,7 @@ void Clmdat45::pctout( ofstream& ofile,
                         const float& col,
                         const float& row,
                         const string& varname,
-                        const int& carea,
+                        const float& carea,
                         const int& year,
                         double mon[CYCLE],
                         const string& contnent )
@@ -310,7 +310,7 @@ void Clmdat45::pctout( ofstream& ofile,
   ofile << col << ' ';
   ofile << setprecision( 1 ) << row << ' ';
   ofile << varname << ' ';
-  ofile << setprecision( 0 ) << carea << ' ';
+  ofile << setprecision( 2 ) << carea << ' ';
   ofile << setprecision( 0 ) << year << ' ';
 
   ofile << setprecision( 2 ) << predtotl << ' ';
@@ -339,7 +339,7 @@ void Clmdat45::poutdel( ofstream& ofile,
                          const float& col,
                          const float& row,
                          const string& varname,
-                         const int& carea,
+                         const float& carea,
                          const int& year,
                          double mon[CYCLE],
                          const string& contnent )
@@ -375,7 +375,7 @@ void Clmdat45::poutdel( ofstream& ofile,
   ofile << col << ",";
   ofile << setprecision( 1 ) << row << ", ";
   ofile << varname << " ,";
-  ofile << setprecision( 0 ) << carea << ",";
+  ofile << setprecision( 2 ) << carea << ",";
   ofile << setprecision( 0 ) << year << ",";
 
   ofile << setprecision( 2 ) << predtotl << ",";
