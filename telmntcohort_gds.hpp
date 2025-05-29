@@ -52,7 +52,7 @@ struct ElmntCohort45
 
   // Area covered by cohort (square kilometers)
   //   during current year
-  long chrtarea;
+  float chrtarea;
 
   // Index for vegetation community type used for
   //   parameterization
@@ -153,7 +153,7 @@ struct ElmntCohort45
 
   // Area covered by cohort (square kilometers)
   //   during previous year
-  long prvchrtarea;
+  float prvchrtarea;
 
   // Crop net primary production during the previous month
   double prvcropnpp;

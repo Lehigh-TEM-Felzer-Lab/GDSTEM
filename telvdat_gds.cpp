@@ -88,7 +88,7 @@ int Elevdat45::getdel( FILE* infile )
   char tmpcontnent[80];
 
   elvend = fscanf( infile,
-                   "%f,%f, %s ,%ld,%lf, %s",
+                   "%f,%f, %s ,%f,%lf, %s",
                    &col,
                    &row,
                    tmpvarname,
@@ -114,7 +114,7 @@ void Elevdat45::out( ofstream& ofile,
                       const float& col,
                       const float& row,
                       const string& varname,
-                      const long& carea,
+                      const float& carea,
                       const double& elev,
                       const string& contnent )
 {
@@ -126,7 +126,7 @@ void Elevdat45::out( ofstream& ofile,
   ofile << col << ' ';
   ofile << row << ' ';
   ofile << varname << ' ';
-  ofile << setprecision( 0 ) << carea << ' ';
+  ofile << setprecision( 2 ) << carea << ' ';
   ofile << setprecision( 1 ) << elev << ' ';
   ofile << contnent;
   ofile << endl;
@@ -144,7 +144,7 @@ void Elevdat45::outdel( ofstream& ofile,
                          const float& col,
                          const float& row,
                          const string& varname,
-                         const long& carea,
+                         const float& carea,
                          const double& elev,
                          const string& contnent )
 {
@@ -156,7 +156,7 @@ void Elevdat45::outdel( ofstream& ofile,
   ofile << col << ",";
   ofile << row << ", ";
   ofile << varname << " ,";
-  ofile << setprecision( 0 ) << carea << ",";
+  ofile << setprecision( 2 ) << carea << ",";
   ofile << setprecision( 1 ) << elev << ", ";
   ofile << contnent;
   ofile << endl;

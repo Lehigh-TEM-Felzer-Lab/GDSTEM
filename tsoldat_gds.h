@@ -34,7 +34,7 @@ class Soildat45
                const float& col,
                const float& row,
                const string& varname,
-               const long& carea,
+               const float& carea,
                const double& pctsand,
                const double& pctsilt,
                const double& pctclay,
@@ -46,7 +46,7 @@ class Soildat45
                   const float& col,
                   const float& row,
                   const string& varname,
-                  const long& carea,
+                  const float& carea,
                   const double& pctsand,
                   const double& pctsilt,
                   const double& pctclay,
@@ -68,7 +68,7 @@ class Soildat45
      string varname;
 
      // area covered by grid cell (sq. km)
-     long carea;
+     float carea;
 
      // percent sand of grid cell's soil texture
      double pctsand;

@@ -57,8 +57,10 @@ class Temdat45
                const int& cmnt,
                const double& psiplusc,
                const int& qlcon,
-               const long& carea,
-               const long& subarea,
+//               const long& carea,
+//               const long& subarea,
+               const float& carea,
+	       const float& subarea,
                const int& year,
                double mon[CYCLE],
                const string& region );
@@ -75,8 +77,10 @@ class Temdat45
                   const int& cmnt,
                   const double& psiplusc,
                   const int& qlcon,
-                  const long& carea,
-                  const long& subarea,
+//                  const long& carea,
+//                  const long& subarea,
+                  const float& carea,
+                  const float& subarea,
                   const int& year,
                   double mon[CYCLE],
                   const string& region );
@@ -93,8 +97,10 @@ class Temdat45
                   const int& cmnt,
                   const double& psiplusc,
                   const int& qlcon,
-                  const long& carea,
-                  const long& subarea,
+//                  const long& carea,
+//                  const long& subarea,
+                  const float& carea,
+                  const float& subarea,
                   const int& year,
                   double mon[CYCLE],
                   const string& region );
@@ -111,8 +117,10 @@ class Temdat45
                    const int& cmnt,
                    const double& psiplusc,
                    const int& qlcon,
-                   const long& carea,
-                   const long& subarea,
+//                   const long& carea,
+//                   const long& subarea,
+                   const float& carea,
+                   const float& subarea,
                    const int& year,
                    double mon[CYCLE],
                    const string& region );
@@ -128,7 +136,8 @@ class Temdat45
      double ave;
 
      // area covered by grid cell (square kilometers)
-     long carea;
+//     long carea;
+     float carea;
 
      // Index for community type
      int cmnt;
@@ -174,7 +183,8 @@ class Temdat45
 
      // area covered by cohort in a grid cell
      //   (square kilometers)
-     long subarea;
+//     long subarea;
+     float subarea;
 
      // vegetation subtype of grid cell (categorical data)
      int subtype;

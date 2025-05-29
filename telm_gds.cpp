@@ -2524,7 +2524,8 @@ void Telm45::setTEMmiss( const int& pdyr,
 /* **************************************************************
 ************************************************************** */
 
-int Telm45::temgisqc( const long& subarea,
+//int Telm45::temgisqc( const long& subarea,
+int Telm45::temgisqc( const float& subarea,
 						  const double& pctsand,
                           const double& pctsilt,
                           const double& pctclay,
@@ -4326,7 +4327,7 @@ void Telm45::updateTEMmonth( const int& equil,
 {
   // Pass cohort characteristics information to TEM
 
-//cout << "entering updateTEMmonth" << endl;
+cout << "entering updateTEMmonth" << endl;
 
   getTEMCohortState( pichrt );
 

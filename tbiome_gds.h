@@ -40,7 +40,7 @@ class Biome45 : public ProcessXML45
      int    getVegMosaic( const int& tveg );
      double getVegSubarea( const int& tveg,
                            const int& dtype,
-                           const int& carea );
+                           const float& carea );
       int   getVegSubtype( const int& tveg, const int& dtype );
      void   getvtype( const string& ecd );
 
@@ -70,7 +70,7 @@ class Biome45 : public ProcessXML45
 
      // Area covered by a vegetation community type
 
-     double subarea;
+     float subarea;
 
 };
 

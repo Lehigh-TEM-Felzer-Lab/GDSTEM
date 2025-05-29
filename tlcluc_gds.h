@@ -131,7 +131,7 @@ class Tlcluc45 : public Biome45
      int startyr;
 
      // portion of carea in a particular cohort, km^2
-     long subarea;
+     float subarea;
 
      int tlulcflag;
 

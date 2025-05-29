@@ -5785,7 +5785,7 @@ cseed = 0.0;
   
   #ifdef DEBUG_XTEM
     printf(" entering adaptive integrator \n");
-    for( i = 0; i < NUMEQ; ++i ) { printf("y[%2d] = %4.1lf \n", i, y[i]); }
+//    for( i = 0; i < NUMEQ; ++i ) { printf("y[%2d] = %4.1lf \n", i, y[i]); }
   #endif
  
 //BSF COMBO START

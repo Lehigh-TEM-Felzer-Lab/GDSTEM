@@ -37,7 +37,7 @@ class Elevdat45
                const float& col,
                const float& row,
                const string& varname,
-               const long& carea,
+               const float& carea,
                const double& elev,
                const string& contnent );
 
@@ -45,7 +45,7 @@ class Elevdat45
                   const float& col,
                   const float& row,
                   const string& varname,
-                  const long& carea,
+                  const float& carea,
                   const double& elev,
                   const string& contnent );
 
@@ -64,7 +64,7 @@ class Elevdat45
      string varname;
 
      // area covered by grid cell (sq. km)
-     long carea;
+     float carea;
 
      // elevation of grid cell (m)
      double elev;
