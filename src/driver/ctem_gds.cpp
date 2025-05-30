@@ -520,6 +520,8 @@ cout << "finished initRun" << endl;
 //    cout << "xdyr = " << xdyr << " " << cdyear << " " << de_startyear << " " << clm.startyr << " " << de_nyears << endl;
      
     tem.atms.setNDEP( adep[0][cdyear] );
+    tem.ag.setFERTNCROP(nfertcrop[0][cdyear]);
+    tem.ag.setFERTNPASTURE(nfertpasture[0][cdyear]);
 
     for( dm = 0; dm < CYCLE; ++dm )
     {
