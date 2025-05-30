@@ -1171,12 +1171,12 @@ void Ttem45::cropDynamics( const int& pdm, const int& pdyr, const double& nmax_g
    ag.fertn = 0.0;
   }
 
-if((ag.fertflag == 1) && (ag.state == 1 || ag.state == 3) && pdm == 4) {
+/*if((ag.fertflag == 1) && (ag.state == 1 || ag.state == 3) && pdm == 4) {
 #ifdef CALIBRATE_TEM
 //   ag.fertn = 15.0;
    ag.fertn = 15.0/12.0;
 #endif
-}
+} */
 
   atms.setLWOUTD( atms.lwrad( atms.getTAIRD(),
                               atms.getVPR(),
@@ -1347,6 +1347,15 @@ nopen = 0;
 
 //----------------------------------------------//
 //  update vegetation dynamics
+
+    if(pdm == 4)
+    {
+     ag.fertn = ag.fertn*12.0;
+    }
+    else
+    {
+     ag.fertn = 0.0;
+    }
 
     soil.setNINPUT( soil.getNINPUT() + ag.fertn );
 
