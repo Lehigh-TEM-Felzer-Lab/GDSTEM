@@ -396,6 +396,14 @@ int Telm45::equilibrateTEM( const double& ptol,
     tem.atms.setNDEP( adep[0][cdyear] );
     tem.ag.setFERTNCROP( nfertcrop[0][cdyear] );
     tem.ag.setFERTNPASTURE( nfertpasture[0][cdyear] );
+
+//    
+//  BSF initialize variable for first planting month
+//
+   
+    tem.setGDDINIT(0);
+    tem.setIDUM(12);
+
     for( dm = 0; dm < CYCLE; ++dm )
     {
       // Assign telmnt[0].climate to TEM.atms
