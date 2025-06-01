@@ -523,6 +523,9 @@ cout << "finished initRun" << endl;
     tem.ag.setFERTNCROP(nfertcrop[0][cdyear]);
     tem.ag.setFERTNPASTURE(nfertpasture[0][cdyear]);
 
+    tem.setGDDINIT(0);
+    tem.setIDUM(12);
+
     for( dm = 0; dm < CYCLE; ++dm )
     {
       // Pass monthly climate information to TEM

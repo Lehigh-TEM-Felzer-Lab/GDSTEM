@@ -555,6 +555,31 @@ class Ttem45
        denitr = pdenitr;
      }
 
+     // gddinit **************************************************
+
+     inline int getGDDINIT( void )
+     {
+       return gddinit;
+     }
+
+     inline void setGDDINIT( const int& pgddinit )
+     {
+       gddinit = pgddinit;
+     }
+
+     // idum **************************************************
+
+     inline int getIDUM( void )
+     {
+       return idum;
+     }
+
+     inline void setIDUM( const int& pidum )
+     {
+       idum = pidum;
+     }
+
+
      // nce ****************************************************
 
      inline double getNCE( void ) { return nce; }
@@ -1209,6 +1234,10 @@ class Ttem45
      double avlnb[MAXCMNT];
  
      double denitr;
+
+     int gddinit;
+
+     int idum;
 
  };
 

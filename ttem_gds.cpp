@@ -1311,6 +1311,15 @@ nopen = 0;
   if( (ag.getGROWDD() >= ag.getGDDSEED(ag.cmnt))
       || (1 == ag.getISPERENNIAL(ag.cmnt)))
   {
+//
+//  BSF add variables to check month when first planting crops
+//
+    gddinit = gddinit + 1;
+    if(gddinit == 1)
+    {
+     idum = pdm;
+    }
+
     veg.nupxclm( ag.cmnt,
                  nmax_grow,
                  pstate[I_SM],
@@ -1348,7 +1357,7 @@ nopen = 0;
 //----------------------------------------------//
 //  update vegetation dynamics
 
-    if(pdm == 4)
+    if(idum == pdm)
     {
      ag.fertn = ag.fertn*12.0;
     }
@@ -1412,6 +1421,8 @@ if(soilc_new/soiln_new < microbe.getCNSOIL(veg.cmnt)-10.0)
   else
   {
     // No crop plants exist - set all monthly fluxes to zero
+
+    ag.fertn = 0.0;
     soil.setNINPUT( soil.getNINPUT() + ag.fertn + atms.getNDEP()/12000.0 );
     #ifdef OPENN
       veg.setVEGNINP( ZERO );
