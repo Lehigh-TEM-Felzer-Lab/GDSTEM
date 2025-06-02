@@ -1542,6 +1542,7 @@ if (((avlh2o + precip) < 50.0) && phen[pdcmnt] == 2) //BSF COMBO
 //  ngc = ngc * (avlh2o + precip)/(avlh2o + precip + 50.0);
 //  gpp = gpp * (avlh2o + precip)/(avlh2o + precip + 50.0);
     gpp = 0.0;
+    ingpp = 0.0;
   }
 
   dnirr = nirrn * 24./pdayl;
