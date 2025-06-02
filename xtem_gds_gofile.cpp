@@ -143,6 +143,9 @@ void initRun( void );
 void updateTCLMGridCell( const int& pdyr );
 void updateTLCLUCGridCell( const int& pdyr );
 void updateTTEMGridCell( const int& pdyr,
+                         const int& tmpsilt,
+                         const int& tmpsand,
+                         const int& tmpclay,
                          ofstream& flog1 );
 
 ofstream flog1;
@@ -248,6 +251,7 @@ int main()
 
   int xdyr;
   int i;
+  int tmpsand, tmpsilt, tmpclay;
   int gisend;
   int ichrt;
   int l;
@@ -579,6 +583,10 @@ int main()
       cout << " after initializeTEMGridCell " << endl;
     #endif  
 
+   tmpsilt = telmnt[0].tem.soil.getPCTSILT();
+   tmpsand = telmnt[0].tem.soil.getPCTSAND();
+   tmpclay = telmnt[0].tem.soil.getPCTCLAY();
+
     // Begin simulation of transient climate and terrestrial
     //   ecosystem response
 
@@ -619,7 +627,7 @@ int main()
 
         // Run TEM for grid cell during year "dyr"
 
-        updateTTEMGridCell( xdyr, flog1 );
+        updateTTEMGridCell( xdyr, tmpsilt, tmpsand, tmpclay, flog1 );
 
     #ifdef DEBUGX
       cout << " after updateTTEMGridCell " << endl;
@@ -3461,6 +3469,9 @@ void updateTLCLUCGridCell( const int& pdyr )
 ************************************************************** */
 
 void updateTTEMGridCell( const int& pdyr,
+                         const int& tmpsilt,
+                         const int& tmpsand,
+                         const int& tmpclay,
                          ofstream& rflog1 )
 {
   int dm;
@@ -3508,6 +3519,20 @@ void updateTTEMGridCell( const int& pdyr,
 
     // Determine soil characteristics for cohort
  
+//  BSF for Chris's runs, set impervious surface to be all clay
+   if( telmnt[0].tem.veg.cmnt == 15)
+   {
+    telmnt[0].tem.soil.setPCTSILT( 0.0 );
+    telmnt[0].tem.soil.setPCTSAND( 0.0 );
+    telmnt[0].tem.soil.setPCTCLAY( 100.0 );
+   }
+   else
+   {
+    telmnt[0].tem.soil.setPCTSILT( tmpsilt );
+    telmnt[0].tem.soil.setPCTSAND( tmpsand );
+    telmnt[0].tem.soil.setPCTCLAY( tmpclay );
+   }
+
     telmnt[0].tem.soil.xtext( telmnt[0].tem.veg.cmnt,
                               telmnt[0].tem.soil.getPCTSILT(),
                               telmnt[0].tem.soil.getPCTCLAY() );

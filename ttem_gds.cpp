@@ -124,7 +124,7 @@ Modifications:
 
   using std::setprecision;
 
-//#define CALIBRATE_TEM
+#define CALIBRATE_TEM
 
 #define STEP_DAILY
 
@@ -3989,6 +3989,8 @@ if(soilc_new/soiln_new < microbe.getCNSOIL(veg.cmnt)-10.0)
 		pdyr,
                 atms.getAOT40() );
 
+// set ET zero for impervious surface
+  if(veg.cmnt == 15) { veg.setPET( 0.0); }
 
 
   soil.updateHydrology( elev,

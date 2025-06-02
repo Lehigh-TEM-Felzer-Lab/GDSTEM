@@ -645,6 +645,10 @@ double Tsoil45::updateRootZ( const int& pdcmnt,
 
   awcapmm = fldcap - wiltpt;
 
+//
+//  BSF for impervious surface ensure no percoloation
+//
+  if(pctclay == 100.0) { awcapmm = 1.0;}
   return (sh2o / (rootz * 1000.0));
 
 };

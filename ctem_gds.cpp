@@ -2488,6 +2488,22 @@ void resetInitState( void )
   
   tem.veg.setRPHI( avgphi );
   
+//  BSF for Chris's runs, set impervious surface to be all clay
+//   cout << "soil texture = " << ichrt << " " <<  telmnt[0].cohort[ichrt] << " " <<  telmnt[0].tem.veg.cmnt << endl;
+
+   if(tem.veg.cmnt == 15)
+   {
+    tem.soil.setPCTSILT( 0.0 );
+    tem.soil.setPCTSAND( 0.0 );
+    tem.soil.setPCTCLAY( 100.0 );
+   }
+   else
+   {
+   tem.soil.setPCTSILT( tem.soil.getPCTSILT() );
+   tem.soil.setPCTSAND( tem.soil.getPCTSAND() );
+   tem.soil.setPCTCLAY( tem.soil.getPCTCLAY() );
+   }
+
     
   tem.soil.xtext( tem.veg.cmnt, 
                   tem.soil.getPCTSILT(), 
@@ -2562,6 +2578,23 @@ void resetInitStateCalib( void )
   }
 
   tem.veg.setRPHI( avgphi );
+
+
+//  BSF for Chris's runs, set impervious surface to be all clay
+//   cout << "soil texture = " << ichrt << " " <<  telmnt[0].cohort[ichrt] << " " <<  telmnt[0].tem.veg.cmnt << endl;
+
+   if(tem.veg.cmnt == 15)
+   {
+    tem.soil.setPCTSILT( 0.0 );
+    tem.soil.setPCTSAND( 0.0 );
+    tem.soil.setPCTCLAY( 100.0 );
+   }
+   else
+   {
+   tem.soil.setPCTSILT( tem.soil.getPCTSILT() );
+   tem.soil.setPCTSAND( tem.soil.getPCTSAND() );
+   tem.soil.setPCTCLAY( tem.soil.getPCTCLAY() );
+   }
 
  tem.soil.xtext( tem.veg.cmnt,
                   tem.soil.getPCTSILT(),
