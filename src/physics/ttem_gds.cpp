@@ -124,7 +124,7 @@ Modifications:
 
   using std::setprecision;
 
-#define CALIBRATE_TEM
+//#define CALIBRATE_TEM
 
 #define STEP_DAILY
 
@@ -3863,7 +3863,7 @@ if(soilc_new/soiln_new < microbe.getCNSOIL(veg.cmnt)-10.0)
 //  soil.setSONINP((veg.getNNF(veg.cmnt)*0.234 * (12.0*soil.getEET()/10.0)+ 0.172 ) /(10.0*12.0));
 //  veg.setVEGNINP(((1.0-veg.getNNF(veg.cmnt))*0.234 * (12.0*soil.getEET()/10.0)+ 0.172) /(10.0*12.0));
 
-  if(veg.cmnt == 1) { veg.setVEGNINP(0.0); }
+  if(veg.cmnt == 1 || veg.cmnt == 15) { veg.setVEGNINP(0.0); }
 //  if(initFlag == 1) { cout << "natveg = " << soil.getSONINP() << " " << veg.getVEGNINP() << " " << soil.getEET() << endl; } 
 #endif
 //
@@ -4955,7 +4955,7 @@ if((pdyr == 0 || pdyr == 1) and pdm == 0) {
     distmnthcnt = 1;
  
 //  set temperate and boreal forest values from McGuire et al. 01
- if(veg.cmnt == 4 || veg.cmnt == 5 || veg.cmnt == 6 || veg.cmnt == 11 || veg.cmnt == 12)
+ if(veg.cmnt == 4 || veg.cmnt == 5 || veg.cmnt == 6 || veg.cmnt == 7 )
  {
    ag.setVCONVERT(0.6);
 //   ag.setVCONVERT(1.0);
@@ -4965,21 +4965,21 @@ if((pdyr == 0 || pdyr == 1) and pdm == 0) {
 //   ag.setPROD100PAR(0.0);
  }
 // set tropical forest values
- if(veg.cmnt == 10)
+ if(veg.cmnt == 13 || veg.cmnt == 14)
   {
    ag.setVCONVERT(0.6);
    ag.setPROD10PAR(0.4);
    ag.setPROD100PAR(0.0);
   }
 // set grassland/tundra values
-  if(veg.cmnt == 2 || veg.cmnt == 7 || veg.cmnt == 8)
+  if(veg.cmnt == 2 || veg.cmnt == 8 || veg.cmnt == 9)
   {
    ag.setVCONVERT(1.0);
    ag.setPROD10PAR(0.0);
    ag.setPROD100PAR(0.0);
   }
 // set shrubland/woodland/savanna values
-  if(veg.cmnt == 9 || veg.cmnt == 13)
+  if(veg.cmnt == 10 || veg.cmnt == 11 || veg.cmnt == 12)
   {
    ag.setVCONVERT(0.8);
    ag.setPROD10PAR(0.2);
@@ -5239,7 +5239,7 @@ else if ( disturbflag ==  4 && pdm == (disturbmonth-1)) //hurricane-strength sto
 
 //  stormoccur = 0;
 //  if(initFlag == 1 && pdm == 7 && pdyr > 1 && (veg.cmnt == 5 || veg.cmnt == 6 || veg.cmnt == 4 || veg.cmnt == 10 || veg.cmnt == 11 || veg.cmnt == 12) && ag.state == 0)
-  if(pdm == 7 && pdyr > 1 && (veg.cmnt == 5 || veg.cmnt == 6 || veg.cmnt == 4 || veg.cmnt == 10 || veg.cmnt == 11 || veg.cmnt == 12) && ag.state == 0)
+  if(pdm == 7 && pdyr > 1 && (veg.cmnt == 5 || veg.cmnt == 6 || veg.cmnt == 4 || veg.cmnt == 7 || veg.cmnt == 13 || veg.cmnt == 14) && ag.state == 0)
   {
 
 
@@ -5364,7 +5364,7 @@ else if ( disturbflag ==  4 && pdm == (disturbmonth-1)) //hurricane-strength sto
         repi = 180;
         vegmax = 17400;
       }
-      if(veg.cmnt == 7) // tall grassland (Great Plains Central tallgrass prairie)
+      if(veg.cmnt == 9) // tall grassland (Great Plains Central tallgrass prairie)
       {
         lowi = 28;
         mixi = 34;
@@ -5378,14 +5378,14 @@ else if ( disturbflag ==  4 && pdm == (disturbmonth-1)) //hurricane-strength sto
         repi = 8;
         vegmax = 300;
       }
-      if(veg.cmnt == 9) // arid shrublands (Great Basin, Basin Big Sagebrush)
+      if(veg.cmnt == 11) // arid shrublands (Great Basin, Basin Big Sagebrush)
       {
         lowi = 0;
         mixi = 200;
         repi = 50;
         vegmax = 540;
       }
-      if(veg.cmnt == 10) // tropical evergreen 
+      if(veg.cmnt == 13) // tropical evergreen 
       {
         lowi = 0;
         mixi = 0;
@@ -5393,21 +5393,21 @@ else if ( disturbflag ==  4 && pdm == (disturbmonth-1)) //hurricane-strength sto
         vegmax = 22000;
       }
 
-      if(veg.cmnt == 11) // xeric forests (SW Woodland, Madrean oak-conifer woodland)
+      if(veg.cmnt == 12) // xeric forests (SW Woodland, Madrean oak-conifer woodland)
       {
         lowi = 14;
         mixi = 140;
         repi = 65;
         vegmax = 4300;
       }
-      if(veg.cmnt == 12) // temperate broadleaved evergreen (California mixed evergreen)
+      if(veg.cmnt == 7) // temperate broadleaved evergreen (California mixed evergreen)
       {
         lowi = 45;
         mixi = 25;
         repi = 140;
         vegmax = 15000;
       }
-      if(veg.cmnt == 13) // Mediterranean shrublands (CA Chaparel or sage shrub)
+      if(veg.cmnt == 10) // Mediterranean shrublands (CA Chaparel or sage shrub)
       {
         lowi = 0;
         mixi = 0;
