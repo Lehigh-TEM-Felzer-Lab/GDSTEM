@@ -3513,6 +3513,13 @@ void updateTTEMGridCell( const int& pdyr,
                               telmnt[0].tem.soil.getPCTCLAY() );
  
 // cout << "year before TEM = " <<  pdyr << endl;
+//
+//  BSF initialize variable for first planting month
+//
+
+    telmnt[0].tem.setGDDINIT(0);
+    telmnt[0].tem.setIDUM(12);
+
     for( dm = 0; dm < CYCLE; ++dm )
     {
 //      cout << "dm = " << dm << endl;
