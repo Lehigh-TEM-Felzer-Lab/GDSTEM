@@ -3520,7 +3520,7 @@ void updateTTEMGridCell( const int& pdyr,
     // Determine soil characteristics for cohort
  
 //  BSF for Chris's runs, set impervious surface to be all clay
-   if( telmnt[0].tem.veg.cmnt == 15)
+   if(telmnt[0].cohort[ichrt].agstate == 4)
    {
     telmnt[0].tem.soil.setPCTSILT( 0.0 );
     telmnt[0].tem.soil.setPCTSAND( 0.0 );
