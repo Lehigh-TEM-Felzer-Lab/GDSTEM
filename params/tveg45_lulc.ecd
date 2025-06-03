@@ -435,35 +435,35 @@
     <nnf>0.65</nnf>
   </community>
 
-  <community type = "15"
+<community type = "15"
     description = "Impervious Surface"
-    developedBy = "BSF/EM"
-    updated = "20250420">
-    <kc>0.0</kc>  
-    <ki>0.0</ki>
-    <tmin>-273.0</tmin>
-    <toptmin>-273.0</toptmin>
-    <toptmax>999.0</toptmax>
-    <tmax>999.0</tmax>
-    <raalpha>0.0</raalpha>
-    <rabeta>0.0</rabeta>
-    <ragamma>0.0</ragamma>
-    <raqref>0.0</raqref>
-    <ratref>0.0</ratref>
-    <kn1>0.0</kn1>
-    <sla>0.0</sla>
-    <href>0.0</href>
-    <krnup>0.0</krnup>
-    <kallom>0.0</kallom>
-    <cnleaf>0.0</cnleaf>
-    <cnsapwood>0.0</cnsapwood>
-    <cnheartwood>0.0</cnheartwood>
-    <cnroot>0.0</cnroot>
-    <cnseed>0.0</cnseed>
-    <pseedlc>0.0</pseedlc>
-    <fsaplive>0.0</fsaplive>
-    <phen>0</phen>
-    <nnf>0.0</nnf>
+    developedBy = "TWC/BSF"
+    updated = "20090121">
+    <kc>200.00</kc>
+    <ki>75.00</ki>
+    <tmin>0.0</tmin>
+    <toptmin>25.0</toptmin>
+    <toptmax>32.7</toptmax>
+    <tmax>42.0</tmax>
+    <raalpha>0.01</raalpha>
+    <rabeta>-5.0</rabeta>
+    <ragamma>55.0</ragamma>
+    <raqref>2.07</raqref>
+    <ratref>25.0</ratref>
+    <kn1>0.0042</kn1>
+    <sla>0.07</sla>
+    <href>3.0</href>
+    <krnup>60.5</krnup>
+    <kallom>0.5</kallom>
+    <cnleaf>20.0</cnleaf>
+    <cnsapwood>150.0</cnsapwood>
+    <cnheartwood>150.0</cnheartwood>
+    <cnroot>15.0</cnroot>
+    <cnseed>15.0</cnseed>
+    <pseedlc>0.05</pseedlc>
+    <fsaplive>1.0</fsaplive>
+    <phen>2</phen>
+    <nnf>0.9</nnf>
   </community>
 
 <community type = "16"

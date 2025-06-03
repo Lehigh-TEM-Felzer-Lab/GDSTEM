@@ -117,8 +117,8 @@
     description = "Impervious Surface"
     developedBy = "BSF/EM"
     updated = "20250420">
-    <rootzc>0.0000</rootzc>
-    <minrootz>0.0000</minrootz>  
+    <rootzc>2.6</rootzc>
+    <minrootz>0.1000</minrootz>
   </community>
 
   <community type = "16"
