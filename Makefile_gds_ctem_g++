@@ -25,6 +25,9 @@ humnact_gds.o : humnact_gds.cpp humnact_gds.h
 tclm_gds.o : tclm_gds.cpp tclm_gds.h
 	${CXX} ${CFLAGS} -c tclm_gds.cpp
 
+tclmdat_gds.o : tclmdat_gds.cpp tclmdat_gds.h
+	${CXX} ${CFLAGS} -c tclmdat_gds.cpp
+
 telvdat_gds.o : telvdat_gds.cpp telvdat_gds.h
 	${CXX} ${CFLAGS} -c telvdat_gds.cpp
 
