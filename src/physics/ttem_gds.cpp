@@ -3990,7 +3990,11 @@ if(soilc_new/soiln_new < microbe.getCNSOIL(veg.cmnt)-10.0)
                 atms.getAOT40() );
 
 // set ET zero for impervious surface
-  if(veg.cmnt == 15) { veg.setPET( 0.0); }
+  if(veg.cmnt == 15)
+  {
+    veg.setPET( 0.0);
+    soil.setSONINP(0.0);
+  }
 
 
   soil.updateHydrology( elev,
