@@ -124,7 +124,7 @@ Modifications:
 
   using std::setprecision;
 
-#define CALIBRATE_TEM
+//#define CALIBRATE_TEM
 
 #define STEP_DAILY
 
@@ -1730,7 +1730,7 @@ void Ttem45::delta( const int& pdm,
   
 //  ++delta_count;
 //  if( delta_count > 1000000 ) { exit(-1); }
-  if( 0 == ag.state )
+  if( 0 == ag.state || 4 == ag.state )
   {
     natvegDynamics( pdm, pdyr, nmax_grow, pstate );
   }
@@ -3990,7 +3990,7 @@ if(soilc_new/soiln_new < microbe.getCNSOIL(veg.cmnt)-10.0)
                 atms.getAOT40() );
 
 // set ET zero for impervious surface
-  if(veg.cmnt == 15)
+  if(ag.state == 4)
   {
     veg.setPET( 0.0);
     soil.setSONINP(0.0);
