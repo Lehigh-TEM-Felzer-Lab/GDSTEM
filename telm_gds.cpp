@@ -4335,7 +4335,7 @@ void Telm45::updateTEMmonth( const int& equil,
 {
   // Pass cohort characteristics information to TEM
 
-cout << "entering updateTEMmonth" << endl;
+//cout << "entering updateTEMmonth" << endl;
 
   getTEMCohortState( pichrt );
 
