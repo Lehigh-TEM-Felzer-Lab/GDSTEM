@@ -839,7 +839,7 @@
     developedBy = "BSF/EM"
     updated = "20250420">
     <numtype>1</numtype>  
-    <subtype1>17</subtype1>
+    <subtype1>18</subtype1>
     <pcttype1>100.00</pcttype1>
     <subtype2>-99</subtype2>
     <pcttype2>0.00</pcttype2>
@@ -873,7 +873,7 @@
     developedBy = "BSF/EM"
     updated = "20250420">
     <numtype>1</numtype>  
-    <subtype1>19</subtype1>
+    <subtype1>18</subtype1>
     <pcttype1>100.00</pcttype1>
     <subtype2>-99</subtype2>
     <pcttype2>0.00</pcttype2>
@@ -890,7 +890,7 @@
     developedBy = "BSF/EM"
     updated = "20250420">
     <numtype>1</numtype>  
-    <subtype1>17</subtype1>
+    <subtype1>18</subtype1>
     <pcttype1>100.00</pcttype1>
     <subtype2>-99</subtype2>
     <pcttype2>0.00</pcttype2>
@@ -941,7 +941,7 @@
     developedBy = "David W. Kicklighter"
     updated = "20020331">
     <numtype>1</numtype>  
-    <subtype1>20</subtype1>
+    <subtype1>18</subtype1>
     <pcttype1>100.00</pcttype1>
     <subtype2>-99</subtype2>
     <pcttype2>0.00</pcttype2>
