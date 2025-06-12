@@ -124,7 +124,7 @@ Modifications:
 
   using std::setprecision;
 
-//#define CALIBRATE_TEM
+#define CALIBRATE_TEM
 
 #define STEP_DAILY
 
@@ -1555,7 +1555,8 @@ if(soilc_new/soiln_new < microbe.getCNSOIL(veg.cmnt)-10.0)
       denitrs = 0.0;
     }
 
-      setDENITR( 0.01*microbe.getGMIN() + denitrs);
+//      setDENITR( 0.01*microbe.getGMIN() + denitrs);
+      setDENITR( soil.getDENITR(ag.cmnt) * (0.01*microbe.getGMIN() + denitrs));
 
 //    if(veg.getNUPTAKE() == 0.0)
         if(veg.getNUPTAKE() < 0.01)
@@ -4096,7 +4097,8 @@ if (rfrac*wevap < 0.0) {cout << "diag is negative " << endl;}
     {
       denitrs = 0.0;
     }
-    setDENITR( 0.01*microbe.getGMIN() + denitrs);
+//    setDENITR( 0.01*microbe.getGMIN() + denitrs);
+    setDENITR( soil.getDENITR(veg.cmnt) * (0.01*microbe.getGMIN() + denitrs));
 
 //    if(veg.getNUPTAKE() == 0.0)
     if(veg.getNUPTAKE() < 0.01)

@@ -39,7 +39,7 @@
     <vegnmax1b>450.0</vegnmax1b>
     <microbenupb>18.7</microbenupb>
     <soilnloss>0.05</soilnloss>
-    <soildenitr>1.0</soildenitr>
+    <soildenitr>0.65/soildenitr>
     <microbecnsoil>20.0</microbecnsoil>
     <vegcnltr>48.8</vegcnltr>
     <o3para>0.7</o3para>
