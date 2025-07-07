@@ -124,7 +124,7 @@ Modifications:
 
   using std::setprecision;
 
-//#define CALIBRATE_TEM
+#define CALIBRATE_TEM
 
 #define STEP_DAILY
 

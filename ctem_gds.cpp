@@ -3725,9 +3725,13 @@ void updateTCLMGridCell( const int& pdyr )
     }
   }
   
+  if( 0 == clm.tws10flag )
+  {
+
   for( dm = 0; dm < CYCLE; ++dm )
   {
     ws10dat[dyr].mon[dm] = ws10dat[0].mon[dm];
+  }
   }
 
   if( 0 == clm.to3flag )
