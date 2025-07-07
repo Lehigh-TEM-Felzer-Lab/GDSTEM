@@ -2673,8 +2673,17 @@ void updateTCLMGridCell( const int& pdyr )
   for( dm = 0; dm < CYCLE; ++dm )
   {
     ws10dat[dyr].mon[dm] = ws10dat[0].mon[dm];
+    if(ws10dat[dyr].mon[dm] == 0.0) {ws10dat[dyr].mon[dm] = 0.01;}
   }
    }
+  if( 1 == telmnt[0].clm.tws10flag )
+   {
+  for( dm = 0; dm < CYCLE; ++dm )
+  {
+    if(ws10dat[dyr].mon[dm] == 0.0) {ws10dat[dyr].mon[dm] = 0.01;}
+  }
+   }
+
 
   if( 0 == telmnt[0].clm.to3flag )
   {
