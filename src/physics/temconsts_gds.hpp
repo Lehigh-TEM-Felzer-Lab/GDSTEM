@@ -29,7 +29,7 @@
 // Maximum number of cohorts in a grid cell
 #ifndef MAXCHRTS_CONST
 #define MAXCHRTS_CONST
-  const int MAXCHRTS = 2000;
+  const int MAXCHRTS = 30000;
 #endif
 
 // Maximum number of community types for TEM parameters

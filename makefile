@@ -1,5 +1,5 @@
 CXX = g++
-CFLAGS = -O
+CFLAGS = -O -mcmodel=medium
 CFLAGS += -Isrc/physics -Isrc/io -Isrc/driver
 
 vpath %.cpp src/physics src/io src/driver

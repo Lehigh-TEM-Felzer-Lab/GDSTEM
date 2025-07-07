@@ -3840,6 +3840,7 @@ void updateTCLMGridCell( const int& pdyr )
     // 10-meter windspeed
     
     climate[clm.I_WS10][dm][pdyr] = ws10dat[dyr].mon[dm];
+    if(climate[clm.I_WS10][dm][pdyr] == 0) { climate[clm.I_WS10][dm][pdyr] = 0.01;}
 
   }
 
