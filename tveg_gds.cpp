@@ -1560,7 +1560,7 @@ if (((avlh2o + precip) < 50.0) && phen[pdcmnt] == 2) //BSF COMBO
                 precip,
                 esoilmmmo,
                 elev );
-
+  if(dpet < 0.0) {cout << "dpet = " << dpet << " " << pdcmnt << " " << dnirr << " " << lwoutd << " " << lai << " " << taird << " " << vpdd << " " << pdm << " " << gc << " " << snowcover << " " << pdayl << " " << precip << " " << esoilmmmo << " " << elev << endl;}
 
   pesoilw = pen.getPESOIL();
   pecanw = pen.getPECAN();
@@ -1580,6 +1580,7 @@ if (((avlh2o + precip) < 50.0) && phen[pdcmnt] == 2) //BSF COMBO
               esoilmmmo,
               elev );
 
+//  if(npet < 0.0) {cout << "npet = " << npet << " " << pdcmnt << " " << dnirr << " " << lwoutd << " " << lai << " " << taird << " " << vpdd << " " << pdm << " "<< gc << " " << snowcover << " " << pdayl << " " << precip << " " << esoilmmmo << " " << elev << endl;}
   pesoilw += pen.getPESOIL();
   pecanw += pen.getPECAN();
   shfluxw += pen.getSHFLUX()*(24.0-pdayl)/24.0;

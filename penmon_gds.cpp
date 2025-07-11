@@ -357,6 +357,9 @@ instead of the source height vpd.
 
     etsw = (wc*pmc + ws*pms); // W m^-2
 
+//    if(etsw < 0.0) { cout << "ET = " << etsw << " " << wc << " " << pmc << " " << ws << " " << pms << " " << npms << " " << dpms << endl;}
+//    if(etsw < 0.0) {cout << "npms = " <<  npms << " " << beta << " " << rn << " " << CPAIR << " " << RHOAIR << " " << exp_h << " " << vpd << " " << beta << " " << r_as << " " << rnsoil << " " << r_aa << endl;}
+//    if(etsw < 0.0) { cout << "lwcor = " << lwcor << " " << lwout << " " << ecanmmmo << endl;}
 
     // having obtained the overall latent energy flux, we now can determine vpdo,
     //   and thus the respective contributions of canopy and soil
@@ -381,6 +384,7 @@ instead of the source height vpd.
     if(esoilmmmo != 0.0) {pesoil = esoilmmmo;}
 
 //    cout << "diag = " << beta << " " << vpdo << " "<< r_as << " " << rnsoil << " " << etimes << " " << pesoil << endl;
+    if(etsw < 0.0) {etsw = 0.0;}
     return etsw;
 
 };
