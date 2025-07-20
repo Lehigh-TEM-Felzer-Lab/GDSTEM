@@ -348,8 +348,8 @@
     <harvstN>0.40</harvstN>
     <residueC>0.000000</residueC> 
     <residueN>0.000000</residueN>
-    <cropseedC>3.0</cropseedC>
-    <cropseedSTON>0.001</cropseedSTON>
+    <cropseedC>15.0</cropseedC>
+    <cropseedSTON>0.25</cropseedSTON>
     <gddmin>5.0</gddmin>
     <gddseed>300.0</gddseed>
     <gddharvst>2400.0</gddharvst>
@@ -390,12 +390,12 @@
     <harvstN>0.40</harvstN>
     <residueC>0.000000</residueC> 
     <residueN>0.000000</residueN>
-    <cropseedC>3.0</cropseedC>
-    <cropseedSTON>0.001</cropseedSTON>
+    <cropseedC>15.0</cropseedC>
+    <cropseedSTON>0.25</cropseedSTON>
     <gddmin>5.0</gddmin>
     <gddseed>300.0</gddseed>
-    <gddharvst>2000.0</gddharvst>
-    <tkill>-20.0</tkill>
+    <gddharvst>2400.0</gddharvst>
+    <tkill>0.0</tkill>
     <isPerennial>1</isPerennial>
   </community>
 

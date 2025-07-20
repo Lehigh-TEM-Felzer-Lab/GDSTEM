@@ -262,14 +262,14 @@
     developedBy = "TWC"
     updated = "20061218">
     <cdleaf>0.1</cdleaf>
-    <wleaf>0.01</wleaf>  
-    <gsa>5.0</gsa>
-    <gsmin>0.3</gsmin>
+    <wleaf>0.05</wleaf>  
+    <gsa>15.0</gsa>
+    <gsmin>12.0</gsmin>
     <kext>0.5</kext>
     <albedo>0.22</albedo>
-    <lscmin>0.25</lscmin>
-    <groot>0.02</groot>
-    <kstem>50000.0</kstem>
+    <lscmin>0.1</lscmin>
+    <groot>0.044</groot>
+    <kstem>22000.0</kstem>
     <rhostem>250.0</rhostem>
   </community>
 
@@ -285,7 +285,7 @@
     <albedo>0.22</albedo>
     <lscmin>0.1</lscmin>
     <groot>0.044</groot>
-    <kstem>220000.0</kstem>
+    <kstem>22000.0</kstem>
     <rhostem>250.0</rhostem>
   </community>
   
@@ -294,14 +294,14 @@
     developedBy = "TWC"
     updated = "20061218">
     <cdleaf>0.1</cdleaf>
-    <wleaf>0.01</wleaf>  
-    <gsa>5.0</gsa>
-    <gsmin>0.3</gsmin>
+    <wleaf>0.05</wleaf>  
+    <gsa>15.0</gsa>
+    <gsmin>12.0</gsmin>
     <kext>0.5</kext>
-    <albedo>0.2</albedo>
-    <lscmin>0.25</lscmin>
-    <groot>0.02</groot>
-    <kstem>50000.0</kstem>
+    <albedo>0.22</albedo>
+    <lscmin>0.1</lscmin>
+    <groot>0.044</groot>
+    <kstem>22000.0</kstem>
     <rhostem>250.0</rhostem>
   </community>
 

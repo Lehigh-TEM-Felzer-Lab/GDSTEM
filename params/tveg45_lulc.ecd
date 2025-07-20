@@ -501,29 +501,29 @@
     description = "Soybean"
     developedBy = "TWC"
     updated = "20061218">
-    <kc>400.00</kc>
+    <kc>40.00</kc>
     <ki>75.00</ki>
     <tmin>0.0</tmin>
-    <toptmin>13.0</toptmin>
+    <toptmin>25.0</toptmin>
     <toptmax>32.7</toptmax>
-    <tmax>38.0</tmax>
+    <tmax>42.0</tmax>
     <raalpha>0.01</raalpha>
     <rabeta>-5.0</rabeta>
     <ragamma>55.0</ragamma>
     <raqref>2.07</raqref>
     <ratref>25.0</ratref>
     <kn1>0.0042</kn1>
-    <sla>0.0497</sla>
+    <sla>0.0533</sla>
     <href>3.0</href>
     <krnup>0.286</krnup>
     <kallom>0.5</kallom>
-    <cnleaf>20.0</cnleaf>
-    <cnsapwood>60.0</cnsapwood>
-    <cnheartwood>60.0</cnheartwood>
-    <cnroot>20.0</cnroot>
-    <cnseed>20.0</cnseed>
-    <pseedlc>0.0</pseedlc>
-    <fsaplive>0.0</fsaplive>
+    <cnleaf>25.0</cnleaf>
+    <cnsapwood>100.0</cnsapwood>
+    <cnheartwood>100.0</cnheartwood>
+    <cnroot>25.0</cnroot>
+    <cnseed>60.0</cnseed>
+    <pseedlc>0.9</pseedlc>
+    <fsaplive>0.5</fsaplive>
     <phen>1</phen>
     <nnf>0.9</nnf>
   </community>
@@ -563,30 +563,30 @@
     description = "Switchgrass"
     developedBy = "TWC"
     updated = "20061218">
-    <kc>400.00</kc>  
+    <kc>40.00</kc>  
     <ki>75.00</ki>
     <tmin>0.0</tmin>
-    <toptmin>13.0</toptmin>
+    <toptmin>25.0</toptmin>
     <toptmax>32.7</toptmax>
-    <tmax>38.0</tmax>
+    <tmax>42.0</tmax>
     <raalpha>0.01</raalpha>
     <rabeta>-5.0</rabeta>
     <ragamma>55.0</ragamma>
     <raqref>2.07</raqref>
     <ratref>25.0</ratref>
     <kn1>0.0042</kn1>
-    <sla>0.0356</sla>
+    <sla>0.0533</sla>
     <href>3.0</href>
-    <krnup>2.04</krnup>
+    <krnup>0.286</krnup>
     <kallom>0.5</kallom>
     <cnleaf>25.0</cnleaf>
-    <cnsapwood>150.0</cnsapwood>
-    <cnheartwood>150.0</cnheartwood>
+    <cnsapwood>100.0</cnsapwood>
+    <cnheartwood>100.0</cnheartwood>
     <cnroot>25.0</cnroot>
-    <cnseed>25.0</cnseed>
-    <pseedlc>0.0</pseedlc>
-    <fsaplive>0.0</fsaplive>
-    <phen>2</phen>
+    <cnseed>60.0</cnseed>
+    <pseedlc>0.9</pseedlc>
+    <fsaplive>0.5</fsaplive>
+    <phen>1</phen>
     <nnf>0.9</nnf>
   </community>
   

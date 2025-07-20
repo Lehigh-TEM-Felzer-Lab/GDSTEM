@@ -133,7 +133,7 @@
     description = "Soybean"
     developedBy = "TWC"
     updated = "20061218">
-    <rootzc>0.3003</rootzc>
+    <rootzc>1.0</rootzc>
     <minrootz>0.3000</minrootz>  
   </community>
 
@@ -149,7 +149,7 @@
     description = "Switchgrass"
     developedBy = "TWC"
     updated = "20061218">
-    <rootzc>0.3003</rootzc>
+    <rootzc>1.0</rootzc>
     <minrootz>0.3000</minrootz> 
   </community>
   
