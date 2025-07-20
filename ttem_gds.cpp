@@ -1124,6 +1124,8 @@ void Ttem45::cropDynamics( const int& pdm, const int& pdyr, const double& nmax_g
   dtmax = 0.03333;
 
 #ifndef CALIBRATE_TEM
+  if(ag.getISPERENNIAL(ag.cmnt) == 0)
+  {
   ag.fertflag = 1;
   ag.tillflag = 0;
   if(ag.state == 1 || ag.state == 3)
@@ -1134,7 +1136,14 @@ void Ttem45::cropDynamics( const int& pdm, const int& pdyr, const double& nmax_g
   {
     ag.irrgflag = 0;
   }
+  }
+  else
+  {
+   ag.fertflag = 0;
+   ag.irrgflag = 0;
+  }
 #endif
+
 
   #ifdef DEBUG_CTEM
     move(DEBUG_ROW,1);
