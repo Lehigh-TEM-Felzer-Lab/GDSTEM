@@ -1454,6 +1454,7 @@ void Tveg45::nupxclm( const int& pdcmnt,
 //cout << "nmax = " << nmax << " " << nmax_grow << endl;
 
   vegnup  = (availn * ksoil) / soilh2o;
+  if(soilh2o == 0) { vegnup = 0.0; }
 //  vegnup *= nmax / (kn1[pdcmnt] + vegnup);
   vegnup *= nmax_grow / (kn1[pdcmnt] + vegnup);
   vegnup *= rofT;

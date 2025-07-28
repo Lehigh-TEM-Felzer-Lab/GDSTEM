@@ -379,7 +379,6 @@ double Tmcrb45::rhxclm( const double& soilorgc,
 
   rh = kd * soilorgc * moist * pdq10;
 //  rh += volac;
-//  cout << "rh = " << rh << " " << kd << " " << soilorgc << " " << moist << " " << pdq10 << endl;
 //  cout << "rh = " << rh << " " << rltrc << " " << rrh << endl;
   return rh += fsoil*(rltrc-rrh);
 
@@ -666,7 +665,6 @@ double Tmcrb45::yrkd( const int& nfeed,
   if ( yrltrn <= 0.000000000000001 ) { return  yrkd = ZERO; }
   if ( yrltrc < ZERO )
   {
-    cout << "YRLTRC is < 0.0 in microbe.yrkd()" << endl;
 
     exit( -1 );
   }
