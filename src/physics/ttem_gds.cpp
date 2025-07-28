@@ -1923,7 +1923,7 @@ void Ttem45::delta( const int& pdm,
                     - veg.getNUPTAKE()
                     - soil.getNLOST();
 
-//cout << "pdavln = " << pdstate[I_AVLN] << " " << soil.getNINPUT() << " " << microbe.getNETNMIN() << " " <<  ag.getVOLAN() << " " << veg.getNUPTAKE() << " " << soil.getNLOST() << " " << pstate[I_AVLN] << endl;
+cout << "pdavln = " << pdstate[I_AVLN] << " " << soil.getNINPUT() << " " << microbe.getNETNMIN() << " " <<  ag.getVOLAN() << " " << veg.getNUPTAKE() << " " << soil.getNLOST() << " " << pstate[I_AVLN] << endl;
 //if(veg.cmnt == 15) {cout << "pdavln = " << pdstate[I_AVLN] << " " << soil.getNINPUT() << " " << microbe.getNETNMIN() << " " <<  ag.getVOLAN() << " " << veg.getNUPTAKE() << " " << soil.getNLOST() << " " << pstate[I_AVLN] << " " << soil.getRRUN() << " " << soil.getSRUN() << " " << pstate[I_SM] << endl;}
 //if(initFlag == 1) {cout << "pdavln = " << pdstate[I_AVLN] << " " << soil.getNINPUT() << " " << microbe.getNETNMIN() << " " <<  ag.getVOLAN() << " " << veg.getNUPTAKE() << " " << soil.getNLOST() << " " << pstate[I_AVLN] << " " << soil.getRRUN() << " " << soil.getSRUN() << " " << pstate[I_SM] << endl;}
 //if(pstate[I_AVLN] < 0.0) {cout << "pdavln = " << pdstate[I_AVLN] << " " << soil.getNINPUT() << " " << microbe.getNETNMIN() << " " <<  ag.getVOLAN() << " " << veg.getNUPTAKE() << " " << soil.getNLOST() << " " << pstate[I_AVLN] << " " << soil.getRRUN() << " " << soil.getSRUN() << " " << pstate[I_SM] << endl;}
@@ -4749,6 +4749,7 @@ void Ttem45::setELMNTecd( const int& pdcmnt,
   veg.resetEcds( pdcmnt, psiplusc );
 
   microbe.resetEcds( pdcmnt, psiplusc );
+  cout << "entering in setELMNTecd" << endl;
 
 };
 
@@ -4948,6 +4949,7 @@ if((pdyr == 0 || pdyr == 1) and pdm == 0) {
                                      veg.cmnt ) );
 
         ag.setKD( microbe.getKD() );
+	cout << "kd in stepmonth = " << ag.getKD() << endl;
         ag.setNATSOIL( y[I_SOLC] );
       }
       else
