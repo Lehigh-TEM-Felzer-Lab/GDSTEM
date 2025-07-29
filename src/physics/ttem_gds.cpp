@@ -738,7 +738,7 @@ Ttem45::Ttem45() : predstr( NUMTEM )
   predstr.at( I_AGFPRDC ) = "AGFPRODC";
 
   // nitrogen loss to formation of agricultural products
-  predstr.at( I_AGPRDN ) = "AGFPRODN";
+  predstr.at( I_AGFPRDN ) = "AGFPRODN";
 
   // carbon loss to crop residue
   predstr.at( I_FRESIDC ) = "FRESIDC";
