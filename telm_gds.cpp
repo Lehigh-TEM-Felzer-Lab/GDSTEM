@@ -2611,6 +2611,7 @@ void Telm45::temwritepred( ofstream fout[NUMTEM],
   int dm;
   Temdat45 tempred;
 
+  cout << "entering temwritepred " << endl;
 
   for( i = 0; i < ntempred; ++i )
   {
