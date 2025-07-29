@@ -1177,7 +1177,6 @@ void initializeTEMGridCell( void )
                                   ftempred,
                                   tempredmap,
                                   spinoutfg );
-      cout << "exiting setTEMequilState" << endl;
 //
 //  BSF if intflag = 1, that means integration is solved ok
 //
