@@ -1807,7 +1807,14 @@ void initRun( void )
 
     if( istateflag == 2 ) { flog1 << " input state year: " << istateyear << endl; }
     
-    if( istateflag > 0 ) { ifstate.open( ifilename.c_str(), ios::in ); }
+    if( istateflag > 0 ) { ifstate.open( ifilename.c_str(), ios::in ); 
+    {
+      flog1 << endl << "Cannot open " << ifilename;
+      flog1 << " for TEM restart file" << endl;
+
+     exit( -1 );
+    }
+    }
     
     ostateflag = telmnt[0].tem.goxml.getXMLint( telmnt[0].tem.gofile, "gofile", "ostateflag" );
     flog1 << " output state ( 0 -> do not write TEMSTATE file; 1-> save TEMSTATE at equilibrium; 2 -> save TEMSTATE at a specific year) " << ostateflag << endl;
