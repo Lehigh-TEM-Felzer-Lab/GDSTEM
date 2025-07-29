@@ -105,7 +105,7 @@ int MaxCohortdat45::getdel( FILE* infile )
   varname = tmpvarname;
   contnent = tmpcontnent;
 
-  cout << "mxchrt = " << total << endl;
+//  cout << "mxchrt = " << total << endl;
   return chrtend;
 
 };

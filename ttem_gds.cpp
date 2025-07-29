@@ -4819,6 +4819,8 @@ int Ttem45::stepmonth( const int& pdyr,
   double firemag, vegmax, replace;
 
   double cwdloss=0.0;
+
+   disturbmonth = 4;
 //  cout << "entering stepmonth " << pdyr << " " << pdm << " " << veg.cmnt << " " << ag.cmnt << " " << ag.state << " " << y[I_LEAFC] << " " << y[I_LAI] << endl;
 //cout << "entering stepmonth" << " " << y[I_SAPWOODC] << " " << veg.cmnt << " " << ag.cmnt << " " << sapwoodcb[11] << " " << sapwoodcb[4] << endl;
   srand(time(NULL)*rand()); //PCP code (this statement was here I just modified it a little.)
