@@ -4967,7 +4967,7 @@ if((pdyr == 0 || pdyr == 1) and pdm == 0) {
 
   // Implement disturbance effects
 
-//if(initFlag == 1) {cout << "disturb = " << disturbflag << " " << disturbmonth << " " << veg.cmnt << " " << ichrt << " " << pdyr << " " << pdm << endl;}
+if(initFlag == 1) {cout << "disturb = " << disturbflag << " " << disturbmonth << " " << veg.cmnt << " " << ichrt << " " << pdyr << " " << pdm << endl;}
 
 // if( disturbflag ==  1 && pdm == (disturbmonth-1)) // agriculture
  if( disturbflag ==  1 && pdm == (disturbmonth-1) && veg.srccmnt != 17 && veg.srccmnt != 18 && veg.srccmnt != 19 && veg.srccmnt != 21 && veg.srccmnt != 15 && veg.srccmnt != 16 ) // agriculture
