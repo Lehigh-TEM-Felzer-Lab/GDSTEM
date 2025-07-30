@@ -177,7 +177,7 @@ void Humnact45::conversion( const int& pdcmnt,
 
   nretent = nvretent + nsretent;
 
-//   cout << "convertflux = " << vegc << " " << vconvert << " " << convrtflx.carbon << endl;
+//   cout << "convertflux = " << time << " " << vegc << " " << vconvert << " " << convrtflx.carbon << " " << cwdloss << " " << standdead.carbon << " " << sconvert << " " << soilc <<  endl;
 
 //  cout << "nretent = " << nretent << " " << nvretent << " " << nsretent << " " << soiln << endl;
 

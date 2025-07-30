@@ -579,7 +579,6 @@ class Ttem45
        idum = pidum;
      }
 
-
      // nce ****************************************************
 
      inline double getNCE( void ) { return nce; }
