@@ -1253,6 +1253,7 @@ class Tveg45 : public ProcessXML45
 
      /// int cmnt: Index for community type
      int cmnt;
+     int srccmnt;
 
      /// int hemisphere: flag marking grid cell as belonging to northern (1) or southern (0) hemisphere
      int hemisphere;

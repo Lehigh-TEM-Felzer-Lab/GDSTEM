@@ -4967,12 +4967,16 @@ if((pdyr == 0 || pdyr == 1) and pdm == 0) {
 
   // Implement disturbance effects
 
- if( disturbflag ==  1 && pdm == (disturbmonth-1)) // agriculture
+//if(initFlag == 1) {cout << "disturb = " << disturbflag << " " << disturbmonth << " " << veg.cmnt << " " << ichrt << " " << pdyr << " " << pdm << endl;}
+
+// if( disturbflag ==  1 && pdm == (disturbmonth-1)) // agriculture
+ if( disturbflag ==  1 && pdm == (disturbmonth-1) && veg.srccmnt != 17 && veg.srccmnt != 18 && veg.srccmnt != 19 && veg.srccmnt != 21 && veg.srccmnt != 15 && veg.srccmnt != 16 ) // agriculture
   {
     distmnthcnt = 1;
  
 //  set temperate and boreal forest values from McGuire et al. 01
- if(veg.cmnt == 4 || veg.cmnt == 5 || veg.cmnt == 6 || veg.cmnt == 7 )
+// if(veg.cmnt == 4 || veg.cmnt == 5 || veg.cmnt == 6 || veg.cmnt == 7 )
+ if(veg.srccmnt == 4 || veg.srccmnt == 5 || veg.srccmnt == 6 || veg.srccmnt == 7 )
  {
    ag.setVCONVERT(0.6);
 //   ag.setVCONVERT(1.0);
@@ -4982,21 +4986,24 @@ if((pdyr == 0 || pdyr == 1) and pdm == 0) {
 //   ag.setPROD100PAR(0.0);
  }
 // set tropical forest values
- if(veg.cmnt == 13 || veg.cmnt == 14)
+// if(veg.cmnt == 13 || veg.cmnt == 14)
+ if(veg.srccmnt == 13 || veg.srccmnt == 14)
   {
    ag.setVCONVERT(0.6);
    ag.setPROD10PAR(0.4);
    ag.setPROD100PAR(0.0);
   }
 // set grassland/tundra values
-  if(veg.cmnt == 2 || veg.cmnt == 8 || veg.cmnt == 9)
+//  if(veg.cmnt == 2 || veg.cmnt == 8 || veg.cmnt == 9)
+  if(veg.srccmnt == 2 || veg.srccmnt == 8 || veg.srccmnt == 9)
   {
    ag.setVCONVERT(1.0);
    ag.setPROD10PAR(0.0);
    ag.setPROD100PAR(0.0);
   }
 // set shrubland/woodland/savanna values
-  if(veg.cmnt == 10 || veg.cmnt == 11 || veg.cmnt == 12)
+//  if(veg.cmnt == 10 || veg.cmnt == 11 || veg.cmnt == 12)
+  if(veg.srccmnt == 10 || veg.srccmnt == 11 || veg.srccmnt == 12)
   {
    ag.setVCONVERT(0.8);
    ag.setPROD10PAR(0.2);
