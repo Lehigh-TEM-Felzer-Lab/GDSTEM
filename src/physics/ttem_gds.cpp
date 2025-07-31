@@ -6231,7 +6231,7 @@ if(initFlag == 1) {cout << "time = " << startyr + pdyr << " " << pdm << " " << v
   nbp = nce - ag.getVOLAC() + cseed - soil.getLCHDOC();
 
 
-  if(initFlag == 1 && nce < nbp && (veg.cmnt == 5 || veg.cmnt == 6)) { cout << "nce = " << nce << " " << nbp << " " << ag.getVOLAC() << " " << cseed << " " << soil.getLCHDOC() << " " << veg.cmnt << " " << ag.cmnt << " " << pdyr << " " << pdm << " " << ichrt << endl;}
+//  if(initFlag == 1 && nce < nbp && (veg.cmnt == 5 || veg.cmnt == 6)) { cout << "nce = " << nce << " " << nbp << " " << ag.getVOLAC() << " " << cseed << " " << soil.getLCHDOC() << " " << veg.cmnt << " " << ag.cmnt << " " << pdyr << " " << pdm << " " << ichrt << endl;}
   // Determine carbon storage in ecosystem
 
   ag.setTOTEC( (veg.getVEGC()
