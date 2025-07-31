@@ -3531,6 +3531,8 @@ void updateTTEMGridCell( const int& pdyr,
 // cout << "cohort = " << ichrt << " " << telmnt[0].cohort[ichrt].cmnt << " " << telmnt[0].cohort[ichrt].agcmnt << endl;
     telmnt[0].tem.veg.cmnt = telmnt[0].cohort[ichrt].cmnt;
  
+    telmnt[0].tem.veg.srccmnt = telmnt[0].cohort[lulcdat[pdyr-1][ichrt].isrccohort-1].cmnt;
+
 //  cout << "cohort = " << ichrt << " " <<  telmnt[0].tem.veg.cmnt <<  " " << telmnt[0].cohort[ichrt].tqc << endl;
 
     // Determine soil characteristics for cohort

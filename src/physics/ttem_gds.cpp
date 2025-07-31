@@ -5887,7 +5887,7 @@ cseed = 0.0;
 //cout << "time = " << pdyr << " " << pdm  <<  endl;
 
 //cout << "time = " << pdyr << " " << pdm << " " << sapwoodcb[1] << " " << sapwoodcb[2] << " " << sapwoodcb[3] << " " << sapwoodcb[4] << " " << sapwoodcb[5] << " " << sapwoodcb[6] << " " << sapwoodcb[7] << " " << sapwoodcb[8] << " " << sapwoodcb[9] << " " << sapwoodcb[10] << " " << sapwoodcb[11] << " " << sapwoodcb[12] << " " << sapwoodcb[13] << " " << sapwoodcb[14] << " " << sapwoodcb[15] << " " << sapwoodcb[16] << " " << sapwoodcb[17] << " " << sapwoodcb[18] << " " << sapwoodcb[19] << " " << sapwoodcb[20] << endl;
-//if(initFlag == 1) {cout << "time = " << startyr + pdyr << " " << pdm << " " << veg.cmnt << " " << ag.cmnt << endl;}
+if(initFlag == 1) {cout << "time = " << startyr + pdyr << " " << pdm << " " << veg.cmnt << " " << ag.cmnt << endl;}
 //{cout << "time = " << startyr + pdyr << " " << pdm << endl;}
 //cout << "diag = " << pdyr << " " << pdm << " " << veg.getVEGC() << " " << atms.getTAIR() << " " <<  atms.getCO2() << " " << atms.getNDEP() << " " << veg.getFOZONE() << " " << veg.cmnt << " " << ag.cmnt << " " << ag.state << " " << soil.getPCTPOR() << " " <<  initFlag << endl;
 //  if(pdyr == 1969) {cout << "entering adapt" << endl;}
@@ -6231,6 +6231,7 @@ cseed = 0.0;
   nbp = nce - ag.getVOLAC() + cseed - soil.getLCHDOC();
 
 
+  if(initFlag == 1 && nce < nbp && (veg.cmnt == 5 || veg.cmnt == 6)) { cout << "nce = " << nce << " " << nbp << " " << ag.getVOLAC() << " " << cseed << " " << soil.getLCHDOC() << " " << veg.cmnt << " " << ag.cmnt << " " << pdyr << " " << pdm << " " << ichrt << endl;}
   // Determine carbon storage in ecosystem
 
   ag.setTOTEC( (veg.getVEGC()
