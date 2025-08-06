@@ -593,7 +593,10 @@ void Tsoil45::updateNLosses( const int& pdcmnt,
                              const double& soilh2o )
 {
    nlost = (availn/(soilh2o+rrun+srun))*(rrun+srun);
-   if(soilh2o+rrun+srun == 0.0) {nlost = 0.0;}
+   if(soilh2o+rrun+srun <= 0.0) {
+	   nlost = 0.0;
+   }
+      
 /*  if( soilh2o > ZERO )
   {
     nlost = availn / (soilh2o+h2oloss);
