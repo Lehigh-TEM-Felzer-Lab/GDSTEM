@@ -1520,7 +1520,6 @@ if(soilc_new/soiln_new < microbe.getCNSOIL(veg.cmnt)-10.0)
                         (soil.getRPERC() + soil.getSPERC()),
                         pstate[I_AVLN],
                         pstate[I_SM] );
-
     soil.setLCHDIN(soil.getNLOST());
  
 /*   if(initFlag == 0)
@@ -4785,6 +4784,7 @@ void Ttem45::step( const int& numeq,
 //    if(initFlag == 1) {if(i == 92) {cout << "diag = " << ptstate[i] << endl;}}
 //  {if(i == 37 && initFlag == 1) {cout << "diag = " << ptstate[i] << " " << pstate[i] << " " << pdstate[i] << " " << pdt << endl;}}
   }
+//  cout << "sm in step = " << pstate[19] << " " << ptstate[19] << " " << pdstate[19] << endl;
 //cout << "leafc in step = " << pstate[0] << " " << pdstate[0] << endl;
 //   cout << "diag = " << ptstate[0] << " " << ptstate[1] << " " << ptstate[2] << " " << ptstate[3] << " " << ptstate[4] << " " << ptstate[5] << " " << ptstate[6] << " " << ptstate[7] << " " << ptstate[8] << " " << ptstate[9] << " " << ptstate[10] << " " << ptstate[11] << " " << ptstate[12] << " " << ptstate[13] << " " << ptstate[14] << " " << ptstate[15] << " " << ptstate[16] << " " << ptstate[17] << " " << ptstate[18] << " " << ptstate[19] << " " << ptstate[20] << " " << ptstate[21] << " " << ptstate[22] << " " << ptstate[23] << " " << ptstate[24] << " " << ptstate[25] << " " << ptstate[26] << " " << ptstate[27] << " " << ptstate[28] << " " << ptstate[29] << " " << ptstate[30] << " " << ptstate[31] << " " << ptstate[32] << " " << ptstate[33] << " " << ptstate[34] << " " << ptstate[35] << endl;
 
@@ -4967,7 +4967,7 @@ if((pdyr == 0 || pdyr == 1) and pdm == 0) {
 
   // Implement disturbance effects
 
-if(initFlag == 1) {cout << "disturb = " << disturbflag << " " << disturbmonth << " " << veg.cmnt << " " << ichrt << " " << pdyr << " " << pdm << endl;}
+//if(initFlag == 1) {cout << "disturb = " << disturbflag << " " << disturbmonth << " " << veg.cmnt << " " << ichrt << " " << pdyr << " " << pdm << endl;}
 
 // if( disturbflag ==  1 && pdm == (disturbmonth-1)) // agriculture
  if( disturbflag ==  1 && pdm == (disturbmonth-1) && veg.srccmnt != 17 && veg.srccmnt != 18 && veg.srccmnt != 19 && veg.srccmnt != 21 && veg.srccmnt != 15 && veg.srccmnt != 16 ) // agriculture
@@ -5812,7 +5812,7 @@ cseed = 0.0;
 
 //   set irrigation
 
- if( ag.irrgflag == 1 && ag.state >= 0 & ag.getGROWDD() >= ag.getGDDSEED(ag.cmnt) && ag.getGROWDD() <=ag.getGDDHARVST(ag.cmnt)) {
+ if( ag.irrgflag == 1 && ag.state >= 0 && ag.getGROWDD() >= ag.getGDDSEED(ag.cmnt) && ag.getGROWDD() <=ag.getGDDHARVST(ag.cmnt)) {
   if(atms.getPREC() < 200)
    {
     ag.irrigate = 200.0-atms.getPREC();
@@ -5887,7 +5887,7 @@ cseed = 0.0;
 //cout << "time = " << pdyr << " " << pdm  <<  endl;
 
 //cout << "time = " << pdyr << " " << pdm << " " << sapwoodcb[1] << " " << sapwoodcb[2] << " " << sapwoodcb[3] << " " << sapwoodcb[4] << " " << sapwoodcb[5] << " " << sapwoodcb[6] << " " << sapwoodcb[7] << " " << sapwoodcb[8] << " " << sapwoodcb[9] << " " << sapwoodcb[10] << " " << sapwoodcb[11] << " " << sapwoodcb[12] << " " << sapwoodcb[13] << " " << sapwoodcb[14] << " " << sapwoodcb[15] << " " << sapwoodcb[16] << " " << sapwoodcb[17] << " " << sapwoodcb[18] << " " << sapwoodcb[19] << " " << sapwoodcb[20] << endl;
-if(initFlag == 1) {cout << "time = " << startyr + pdyr << " " << pdm << " " << veg.cmnt << " " << ag.cmnt << endl;}
+//if(initFlag == 1) {cout << "time = " << startyr + pdyr << " " << pdm << " " << veg.cmnt << " " << ag.cmnt << endl;}
 //{cout << "time = " << startyr + pdyr << " " << pdm << endl;}
 //cout << "diag = " << pdyr << " " << pdm << " " << veg.getVEGC() << " " << atms.getTAIR() << " " <<  atms.getCO2() << " " << atms.getNDEP() << " " << veg.getFOZONE() << " " << veg.cmnt << " " << ag.cmnt << " " << ag.state << " " << soil.getPCTPOR() << " " <<  initFlag << endl;
 //  if(pdyr == 1969) {cout << "entering adapt" << endl;}
