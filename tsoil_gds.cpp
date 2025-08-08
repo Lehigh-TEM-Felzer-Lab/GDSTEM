@@ -576,7 +576,14 @@ void Tsoil45::updateDOCLEACH( const double& doc,
 
 {
 
+   if(sh2o+rrun+srun <= 1.0)
+   {
+     lchdoc = 0.0;
+   }
+   else
+   {
    lchdoc = (doc/(sh2o+rrun+srun))*(rrun+srun);
+   }
     if(sh2o+rrun+srun <= 1.0) {lchdoc = 0.0;}
   // lchdoc = doc*((rrun+srun)/(sh2o+rrun+srun));
 
@@ -592,9 +599,13 @@ void Tsoil45::updateNLosses( const int& pdcmnt,
                              const double& availn,
                              const double& soilh2o )
 {
+   if(soilh2o+rrun+srun <= 1.0)
+   {
+     nlost = 0.0;
+   }
+   else
+   {
    nlost = (availn/(soilh2o+rrun+srun))*(rrun+srun);
-   if(soilh2o+rrun+srun <= 0.0) {
-	   nlost = 0.0;
    }
       
 /*  if( soilh2o > ZERO )

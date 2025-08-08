@@ -233,7 +233,14 @@ double Tmcrb45::nminxclm( const int& pdcmnt,
 //  if ( soilorgc > ZERO && soilorgn > ZERO )
   if ( soilorgc > 0.01 && soilorgn > 0.01 ) //BSF COMBO
   {
-    immb  = (availn * ksoil) / soilh2o;
+     if(soilh2o <= 1.0)
+      {
+      immb = 0.0;
+      }
+     else
+     {
+     immb  = (availn * ksoil) / soilh2o;
+     }
 //    cout << "immb ori = " << immb << endl;
     immb  = ((availn + immbadd) * ksoil) / soilh2o;
 //    immb  = ((availn) * ksoil) / soilh2o;
