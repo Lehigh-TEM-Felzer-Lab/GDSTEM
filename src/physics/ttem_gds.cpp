@@ -4820,7 +4820,7 @@ int Ttem45::stepmonth( const int& pdyr,
 
   double cwdloss=0.0;
 
-   disturbmonth = 4;
+   disturbmonth = 1;
 //  cout << "entering stepmonth " << pdyr << " " << pdm << " " << veg.cmnt << " " << ag.cmnt << " " << ag.state << " " << y[I_LEAFC] << " " << y[I_LAI] << endl;
 //cout << "entering stepmonth" << " " << y[I_SAPWOODC] << " " << veg.cmnt << " " << ag.cmnt << " " << sapwoodcb[11] << " " << sapwoodcb[4] << endl;
   srand(time(NULL)*rand()); //PCP code (this statement was here I just modified it a little.)
@@ -4970,8 +4970,10 @@ if((pdyr == 0 || pdyr == 1) and pdm == 0) {
 //if(initFlag == 1) {cout << "disturb = " << disturbflag << " " << disturbmonth << " " << veg.cmnt << " " << ichrt << " " << pdyr << " " << pdm << endl;}
 
 // if( disturbflag ==  1 && pdm == (disturbmonth-1)) // agriculture
- if( disturbflag ==  1 && pdm == (disturbmonth-1) && veg.srccmnt != 17 && veg.srccmnt != 18 && veg.srccmnt != 19 && veg.srccmnt != 21 && veg.srccmnt != 15 && veg.srccmnt != 16 ) // agriculture
+// if( disturbflag ==  1 && pdm == (disturbmonth-1) && veg.srccmnt != 17 && veg.srccmnt != 18 && veg.srccmnt != 19 && veg.srccmnt != 21 && veg.srccmnt != 15 && veg.srccmnt != 16 ) // agriculture
+ if( disturbflag ==  1 && pdm == (disturbmonth-1) ) // agriculture
   {
+//	  cout << "entering disturbance " << pdyr << " " << pdm << " " << ichrt << " " << y[I_HEARTWOODC]+y[I_SAPWOODC] << endl;
     distmnthcnt = 1;
  
 //  set temperate and boreal forest values from McGuire et al. 01
@@ -5004,7 +5006,7 @@ if((pdyr == 0 || pdyr == 1) and pdm == 0) {
 // set shrubland/woodland/savanna values
 //  if(veg.cmnt == 10 || veg.cmnt == 11 || veg.cmnt == 12)
   if(veg.srccmnt == 10 || veg.srccmnt == 11 || veg.srccmnt == 12)
-  {
+{
    ag.setVCONVERT(0.8);
    ag.setPROD10PAR(0.2);
    ag.setPROD100PAR(0.0);
