@@ -4973,12 +4973,15 @@ if((pdyr == 0 || pdyr == 1) and pdm == 0) {
 // if( disturbflag ==  1 && pdm == (disturbmonth-1) && veg.srccmnt != 17 && veg.srccmnt != 18 && veg.srccmnt != 19 && veg.srccmnt != 21 && veg.srccmnt != 15 && veg.srccmnt != 16 ) // agriculture
  if( disturbflag ==  1 && pdm == (disturbmonth-1) ) // agriculture
   {
-//	  cout << "entering disturbance " << pdyr << " " << pdm << " " << ichrt << " " << y[I_HEARTWOODC]+y[I_SAPWOODC] << endl;
     distmnthcnt = 1;
  
+   ag.setVCONVERT(0.6);
+   ag.setPROD10PAR(0.3);
+   ag.setPROD100PAR(0.1);
+
 //  set temperate and boreal forest values from McGuire et al. 01
 // if(veg.cmnt == 4 || veg.cmnt == 5 || veg.cmnt == 6 || veg.cmnt == 7 )
- if(veg.srccmnt == 4 || veg.srccmnt == 5 || veg.srccmnt == 6 || veg.srccmnt == 7 )
+/* if(veg.srccmnt == 4 || veg.srccmnt == 5 || veg.srccmnt == 6 || veg.srccmnt == 7 )
  {
    ag.setVCONVERT(0.6);
 //   ag.setVCONVERT(1.0);
@@ -5010,7 +5013,7 @@ if((pdyr == 0 || pdyr == 1) and pdm == 0) {
    ag.setVCONVERT(0.8);
    ag.setPROD10PAR(0.2);
    ag.setPROD100PAR(0.0);
-  }
+  } */
 
 //  ag.setVCONVERT(1.0);
 //  ag.setSCONVERT(0.025);
@@ -5033,6 +5036,8 @@ if((pdyr == 0 || pdyr == 1) and pdm == 0) {
 //
 //  NEW Approach
 //
+//         cout << "entering disturbance " << pdyr << " " << pdm << " " << ichrt << " " << y[I_LEAFC]/ag.getVCONVERT()+y[I_SAPWOODC]+y[I_HEARTWOODC]+y[I_LABILEC] << " " << ag.getVCONVERT() << " " << y[I_SAPWOODC]+y[I_HEARTWOODC]+y[I_LABILEC] << " " << veg.srccmnt << endl;
+
     ag.conversion( veg.cmnt,
 //        y[I_ROOTC] + y[I_LABILEC],
         y[I_ROOTC] + y[I_LABILEC]*(1-ag.getVCONVERT()),
