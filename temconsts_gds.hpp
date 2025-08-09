@@ -29,7 +29,7 @@
 // Maximum number of cohorts in a grid cell
 #ifndef MAXCHRTS_CONST
 #define MAXCHRTS_CONST
-  const int MAXCHRTS = 30000;
+  const int MAXCHRTS = 3000;
 #endif
 
 // Maximum number of community types for TEM parameters
@@ -59,7 +59,7 @@
 // Maximum number of years in a simulation
 #ifndef MAXRTIME_CONST
 #define MAXRTIME_CONST
-  const int MAXRTIME = 3000;
+  const int MAXRTIME = 500;
 #endif
 
 // Maximum number of water pool variables

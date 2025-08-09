@@ -95,7 +95,7 @@ int Lulcdat45::get( ifstream& infile )
 
 /* *************************************************************
 ************************************************************* */
-#define BUF_SIZE 10000000
+#define BUF_SIZE 100000
 #define MAX_LINE_LENGTH 200
 
 char buf[BUF_SIZE];
