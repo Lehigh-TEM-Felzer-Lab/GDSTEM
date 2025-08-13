@@ -597,7 +597,9 @@ void Tsoil45::updateDOCLEACH( const double& doc,
 void Tsoil45::updateNLosses( const int& pdcmnt,
                              const double& h2oloss,
                              const double& availn,
-                             const double& soilh2o )
+                             const double& soilh2o,
+	                     const int& irrigate,
+	                     const int& agstate	)
 {
    if(soilh2o+rrun+srun <= 1.0)
    {
@@ -618,6 +620,12 @@ void Tsoil45::updateNLosses( const int& pdcmnt,
     nlost *= nloss[pdcmnt];
   } 
   else { nlost = ZERO; } */ 
+//   cout << " agstate = " << irrigate << endl;
+if(agstate == 2 && irrigate >= 1)
+{
+  nloss[pdcmnt] = 0.0;
+}
+
 nlost *= nloss[pdcmnt];
 //cout << "nloss = " << pdcmnt << " " << nloss[pdcmnt] << " " << nlost << endl;
 };
