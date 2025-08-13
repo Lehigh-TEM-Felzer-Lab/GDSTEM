@@ -5837,14 +5837,23 @@ cseed = 0.0;
 //    cout << "prec,irrigate = " << pdm << " " << pdyr << " " << atms.getPREC() << " " << ag.irrigate << endl;
    }
   }
+  else
+  {
+   ag.irrigate = 0.0;
+  }
 
- if( ag.irrgflag == 1 && ag.state >= 0) {
+
+ if( ag.irrgflag == 1 && ag.state > 1) {
 //  if(atms.getYRPREC() < 200)
   if(atms.getPREC() < 200)
 //  if(atms.getPREC() + soil.getAVLH2O() < 50)
    {
     ag.irrigate = 200.0-atms.getPREC();
    }
+  }
+  else
+  {
+   ag.irrigate = 0.0;
   }
 
 

@@ -621,7 +621,7 @@ void Tsoil45::updateNLosses( const int& pdcmnt,
   } 
   else { nlost = ZERO; } */ 
 //   cout << " agstate = " << irrigate << endl;
-if(agstate == 2 && irrigate >= 1)
+if(agstate == 2 && irrigate > 0)
 {
   nloss[pdcmnt] = 0.0;
 }
