@@ -1142,6 +1142,10 @@ void Ttem45::cropDynamics( const int& pdm, const int& pdyr, const double& nmax_g
    ag.fertflag = 0;
    ag.irrgflag = 0;
   }
+ if(ag.state == 2)
+ {
+  ag.irrgflag = 1;
+ }
 #endif
 
 
@@ -5820,7 +5824,6 @@ cseed = 0.0;
   }
 
 //   set irrigation
-
  if( ag.irrgflag == 1 && ag.state >= 0 && ag.getGROWDD() >= ag.getGDDSEED(ag.cmnt) && ag.getGROWDD() <=ag.getGDDHARVST(ag.cmnt)) {
 //  if(atms.getYRPREC() < 200)
   if(atms.getPREC() < 200)
@@ -5829,6 +5832,15 @@ cseed = 0.0;
 //    cout << "prec,irrigate = " << pdm << " " << pdyr << " " << atms.getPREC() << " " << ag.irrigate << endl;
    }
   }
+
+ if( ag.irrgflag == 1 && ag.state >= 0) {
+//  if(atms.getYRPREC() < 200)
+  if(atms.getPREC() < 200)
+   {
+    ag.irrigate = 200.0-atms.getPREC();
+   }
+  }
+
 
   // Run TEM for a monthly time step
 
