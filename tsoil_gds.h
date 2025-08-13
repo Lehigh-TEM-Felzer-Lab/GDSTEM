@@ -104,7 +104,9 @@ class Tsoil45 : public ProcessXML45
      void updateNLosses( const int& pdcmnt,
                          const double& h2oloss,
                          const double& availn,
-                         const double& soilh2o );
+                         const double& soilh2o,
+		         const int& irrigate,
+		         const int& agstate );
 
 
      double updateRootZ( const int& pdcmnt,

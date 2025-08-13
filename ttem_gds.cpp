@@ -1524,7 +1524,10 @@ if(soilc_new/soiln_new < microbe.getCNSOIL(veg.cmnt)-10.0)
 //                        (atms.getRAIN() + soil.getSNOWINF() - soil.getEET() ),
                         (soil.getRPERC() + soil.getSPERC()),
                         pstate[I_AVLN],
-                        pstate[I_SM] );
+                        pstate[I_SM],
+		        ag.irrigate,
+		        ag.state );
+//    cout << "ag.irrigate = " << ag.irrigate << endl;
     soil.setLCHDIN(soil.getNLOST());
  
 /*   if(initFlag == 0)
@@ -4099,7 +4102,9 @@ if (rfrac*wevap < 0.0) {cout << "diag is negative " << endl;}
 //                        (atms.getRAIN() + soil.getSNOWINF() - soil.getEET() ),
                         (soil.getRPERC() + soil.getSPERC()),
                         pstate[I_AVLN],
-                        pstate[I_SM] );
+                        pstate[I_SM],
+		        ag.irrigate,
+		        ag.state );
 
     soil.setLCHDIN(soil.getNLOST());
 
@@ -5836,6 +5841,7 @@ cseed = 0.0;
  if( ag.irrgflag == 1 && ag.state >= 0) {
 //  if(atms.getYRPREC() < 200)
   if(atms.getPREC() < 200)
+//  if(atms.getPREC() + soil.getAVLH2O() < 50)
    {
     ag.irrigate = 200.0-atms.getPREC();
    }
