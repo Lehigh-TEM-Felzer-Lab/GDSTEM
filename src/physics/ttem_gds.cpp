@@ -1242,14 +1242,14 @@ void Ttem45::cropDynamics( const int& pdm, const int& pdyr, const double& nmax_g
     prob = 1.0 - exp(-0.005*atms.getPREC() );
     if( prob < ZERO ) { prob = ZERO; }
      
-    //surf_wetness = soil.getAVLH2O()/soil.getAWCAPMM();
-    surf_wetness = 100.0*soil.getVSM()/soil.getPCTPOR();
+    surf_wetness = soil.getAVLH2O()/soil.getAWCAPMM();
+    //surf_wetness = 100.0*soil.getVSM()/soil.getPCTPOR();
     if( surf_wetness > 1.0 ) { surf_wetness = 1.0; }
     if( surf_wetness < ZERO ) { surf_wetness = ZERO; }
 
     //if(soil.getSNOWPACK() > ZERO) { surf_wetness = 1.0; }
   
-    //veg.pen.setR_SS( exp(8.206 - 4.205*surf_wetness*sqrt(prob)) ); // using modified formulation from SiB2
+//    veg.pen.setR_SS( exp(8.206 - 4.205*surf_wetness*sqrt(prob)) ); // using modified formulation from SiB2
     veg.pen.setR_SS( exp(8.206 - 4.205*sqrt(surf_wetness*prob)) ); // using formulation from SiB2
   #endif
 	                 
@@ -1350,7 +1350,8 @@ nopen = 0;
                  veg.pen.getKEXT(ag.cmnt),
                  microbe.getRH(),
                  atms.getPREC(),
-                 veg.getVEGC());
+                 veg.getVEGC(),
+		 initFlag);
 
 //cout << "gpp = " << ag.cmnt << " " << atms.getNDAYS(pdm) << " " << atms.getCO2() << " " << atms.getPAR() << " " << atms.getVPR() << " " << atms.getVPDD() << " " << atms.getDAYL() << " " << veg.pen.getKEXT(ag.cmnt) << " " << microbe.getRH() << " " << atms.getPREC() << " " << veg.getVEGC() << endl;
 //----------------------------------------------//
@@ -3803,7 +3804,8 @@ nopen = 0;
                veg.pen.getKEXT(veg.cmnt),
                microbe.getRH(),
                atms.getPREC(),
-               veg.getVEGC());
+               veg.getVEGC(),
+	       initFlag);
 
 //  if(atms.getPREC() > 10 && veg.pen.getFWS() < .9) {cout << "fws = " << veg.pen.getFWS() << " " << atms.getPREC() << endl;}
 
@@ -5820,6 +5822,7 @@ cseed = 0.0;
 //   set irrigation
 
  if( ag.irrgflag == 1 && ag.state >= 0 && ag.getGROWDD() >= ag.getGDDSEED(ag.cmnt) && ag.getGROWDD() <=ag.getGDDHARVST(ag.cmnt)) {
+//  if(atms.getYRPREC() < 200)
   if(atms.getPREC() < 200)
    {
     ag.irrigate = 200.0-atms.getPREC();

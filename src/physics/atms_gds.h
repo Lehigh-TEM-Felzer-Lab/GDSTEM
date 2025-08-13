@@ -351,6 +351,15 @@ class Atms45
        ws10 = pws10;
      }
 
+    // yrprec ****************************************************
+
+     inline double getYRPREC( void ) { return yrprec; }
+
+     inline void setYRPREC( const double& pyrprec )
+     {
+       yrprec = pyrprec;
+     }
+
 
 
 /* **************************************************************
