@@ -62,7 +62,8 @@ class Tveg45 : public ProcessXML45
                      const double& kext,
                      const double& rhmcrb,
                      const double& prec,
-                     const double& vegc );
+                     const double& vegc,
+		     const int& initFlag );
      
      void litterresp( const int& pdcmnt,
                       const int& pndays );

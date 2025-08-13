@@ -1213,7 +1213,8 @@ void Tveg45::gppxclm( const int& pdcmnt,
                         const double& kext,
                         const double& rhmcrb,
                         const double& prec,
-                        const double& vegc)
+                        const double& vegc,
+			const int& initFlag)
 {
 /**
     Calculation of photosynthesis, based on integrated leaf-level light formula,
@@ -1242,6 +1243,7 @@ void Tveg45::gppxclm( const int& pdcmnt,
   kiw = ki[pdcmnt]*(41840.0/86400.0);
 // convert cmax from micromol co2 m^-2 s^-1 to gC m^-2 month^-1 (considering daylength)
   cmaxgcmo = cmax * (12.0*3600.0*pdayl*pndays)/1000000.0;
+//  if(initFlag == 1) { cout << "diag = " << par << " " << pdayl << " " << pndays << " " << cmax << endl;}
 //  cout << "hello " << endl;
 //  if(cmax == 0.0)
 //  {
@@ -1254,7 +1256,7 @@ void Tveg45::gppxclm( const int& pdcmnt,
   {
 //cout << "frdl 1" << " " << lai << " " << (1.0/kext)*log((kiw+kext*parw)/(kiw+kext*parw*exp(-kext*lai))) << " " << kiw << " " << kext << " " << parw << " " << exp(-kext*lai) << endl;
     frdl = (1.0/kext)*log((kiw+kext*parw)/(kiw+kext*parw*exp(-kext*lai)));
-//cout << "frdl 2" << " " << lai << " " << (1.0/kext)*log((kiw+kext*parw)/(kiw+kext*parw*exp(-kext*lai))) << " " << kiw << " " << kext << " " << parw << " " << exp(-kext*lai) << endl;
+//if(initFlag == 1) {cout << "frdl 2" << " " << lai << " " << (1.0/kext)*log((kiw+kext*parw)/(kiw+kext*parw*exp(-kext*lai))) << " " << kiw << " " << kext << " " << parw << " " << exp(-kext*lai) << endl;}
     frad = kext*parw*exp(-kext*lai)/(kiw+kext*parw*exp(-kext*lai));
   }
   else
@@ -1550,6 +1552,7 @@ if (((avlh2o + precip) < 50.0) && phen[pdcmnt] == 2) //BSF COMBO
 //  gpp = gpp * (avlh2o + precip)/(avlh2o + precip + 50.0);
     gpp = 0.0;
     ingpp = 0.0;
+    pen.setR_SS(1000000.0);
   }
 
   dnirr = nirrn * 24./pdayl;
