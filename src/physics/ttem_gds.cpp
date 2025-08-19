@@ -1142,10 +1142,10 @@ void Ttem45::cropDynamics( const int& pdm, const int& pdyr, const double& nmax_g
    ag.fertflag = 0;
    ag.irrgflag = 0;
   }
- if(ag.state == 2)
+/* if(ag.state == 2)
  {
   ag.irrgflag = 1;
- }
+ } */
 #endif
 
 
