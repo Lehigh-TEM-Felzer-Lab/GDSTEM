@@ -7,8 +7,8 @@
   developedBy = "TWC/BSF/DWK"
   updated = "20090121">
 
-  <community type = "21"
-    description = "Pasture">
+  <community type = "22"
+    description = "Moist Pasture">
   
     <leafcb>100.0</leafcb>
     <sapwoodcb>100.0</sapwoodcb>
@@ -26,7 +26,7 @@
     <solnb>586.005</solnb>
     <avlnb>0.80</avlnb>
 
-    <vegcmax1b>8.6</vegcmax1b>
+    <vegcmax1b>18.3</vegcmax1b>
     <vegtauleaf>1.0</vegtauleaf>
     <vegtausapwood>1.0</vegtausapwood>
     <vegtauheartwood>0.2696</vegtauheartwood>
@@ -36,7 +36,7 @@
     <microbekdb>0.0066</microbekdb>
     <microbelcclnc>57.1</microbelcclnc>
     <microbepropftos>0.2000</microbepropftos>
-    <vegnmax1b>90.0</vegnmax1b>
+    <vegnmax1b>115.0</vegnmax1b>
     <microbenupb>40.0</microbenupb>
     <soilnloss>5.0</soilnloss>
     <soildenitr>1.0</soildenitr>
