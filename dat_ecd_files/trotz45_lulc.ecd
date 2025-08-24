@@ -162,20 +162,19 @@
   </community>
   
   <community type = "21"
-    description = "Pasture"
+    description = "Dry Pasture"
     developedBy = "A. David McGuire"
     updated = "19931115">
     <rootzc>2.6</rootzc>
     <minrootz>0.1000</minrootz>  
   </community>
    
- <community type = "20"
+ <community type = "22"
     description = "Moist Pasture"
     developedBy = "TWC"
     updated = "20090121">
     <rootzc>2.6</rootzc>
     <minrootz>0.1000</minrootz>
   </community>
-
 </rootzECD>
 
