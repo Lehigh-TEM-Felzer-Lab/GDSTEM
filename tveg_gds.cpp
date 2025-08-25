@@ -1721,7 +1721,7 @@ void Tveg45::resetMonthlyFluxes( void )
     Set veg. variables that correspond to monthly fluxes back to zero
 */  
   
-  lai = ZERO;
+//  lai = ZERO;
   fpc = ZERO;
 
   // Reset monthly fluxes to zero
