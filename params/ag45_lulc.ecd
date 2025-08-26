@@ -165,7 +165,7 @@
     <gddseed>300.0</gddseed>
     <gddharvst>2000.0</gddharvst>
     <tkill>0.0</tkill>
-    <isPerennial>0</isPerennial>
+    <isPerennial>1</isPerennial>
   </community>
 
   <community type = "9"
@@ -186,7 +186,7 @@
     <gddseed>300.0</gddseed>
     <gddharvst>2000.0</gddharvst>
     <tkill>0.0</tkill>
-    <isPerennial>0</isPerennial>
+    <isPerennial>1</isPerennial>
   </community>
 
   <community type = "10"
@@ -333,7 +333,7 @@
     <gddseed>300.0</gddseed>
     <gddharvst>2000.0</gddharvst>
     <tkill>0.0</tkill>
-    <isPerennial>0</isPerennial>
+    <isPerennial>1</isPerennial>
   </community>
 
   <community type = "17"
@@ -438,7 +438,7 @@
     <gddseed>300.0</gddseed>
     <gddharvst>2000.0</gddharvst>
     <tkill>0.0</tkill>
-    <isPerennial>0</isPerennial>
+    <isPerennial>1</isPerennial>
   </community>
 
   <community type = "22"
@@ -459,7 +459,7 @@
     <gddseed>300.0</gddseed>
     <gddharvst>2000.0</gddharvst>
     <tkill>0.0</tkill>
-    <isPerennial>0</isPerennial>
+    <isPerennial>1</isPerennial>
   </community>
 </agECD>
 
