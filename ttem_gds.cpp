@@ -5103,13 +5103,13 @@ else if ( disturbflag ==  2 && pdm == (disturbmonth-1)) // timber harvest clearc
 //
 //  Timber harvest product values from conservatree.org based on Weyerhauser
 //
-// ag.setVCONVERT(0.21);
-  ag.setVCONVERT(0.73);
+ ag.setVCONVERT(0.21);
+//  ag.setVCONVERT(0.73);
   ag.setSCONVERT(0.0);
-//  ag.setPROD10PAR(0.32);
-  ag.setPROD10PAR(0.20);
-//  ag.setPROD100PAR(0.47);
-  ag.setPROD100PAR(0.07);
+  ag.setPROD10PAR(0.32);
+//  ag.setPROD10PAR(0.20);
+  ag.setPROD100PAR(0.47);
+//  ag.setPROD100PAR(0.07);
   cwdloss = 0.0;
 
     ag.setNATSEEDC (y[I_SEEDC] );
