@@ -2491,7 +2491,8 @@ void resetInitState( void )
 //  BSF for Chris's runs, set impervious surface to be all clay
 //   cout << "soil texture = " << ichrt << " " <<  telmnt[0].cohort[ichrt] << " " <<  telmnt[0].tem.veg.cmnt << endl;
 
-   if(tem.ag.state == 4)
+//   if(tem.ag.state == 4)
+   if(tem.ag.state == 7)
    {
     tem.soil.setPCTSILT( 0.0 );
     tem.soil.setPCTSAND( 0.0 );
@@ -2583,7 +2584,8 @@ void resetInitStateCalib( void )
 //  BSF for Chris's runs, set impervious surface to be all clay
 //   cout << "soil texture = " << ichrt << " " <<  telmnt[0].cohort[ichrt] << " " <<  telmnt[0].tem.veg.cmnt << endl;
 
-   if(tem.ag.state == 4)
+//   if(tem.ag.state == 4)
+   if(tem.ag.state == 7)
    {
     tem.soil.setPCTSILT( 0.0 );
     tem.soil.setPCTSAND( 0.0 );
@@ -2787,7 +2789,7 @@ void updateCalibPar( tcalkey& tcal,
                     
     case T_AGSTATE: if( factor == 1.01 ) { tem.ag.state += 1; }
                         if( factor == 0.99 ) { tem.ag.state -= 1; }
-	                if( tem.ag.state > 4 ) { tem.ag.state = 0; }    
+	                if( tem.ag.state > 7 ) { tem.ag.state = 0; }    
 	                if( tem.ag.state < 0 ) { tem.ag.state = 0; }    
 //cout << "factor = " << factor << " " << tem.ag.state << endl;
                     break;

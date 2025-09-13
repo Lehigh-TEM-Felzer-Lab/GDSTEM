@@ -3460,7 +3460,7 @@ void updateTLCLUCGridCell( const int& pdyr )
     telmnt[0].cohort[ichrt].agcmnt = telmnt[0].cohort[ichrt].cmnt;
 
 //    if( pdyr > 0 && 1 == lulcdat[tstyr][ichrt].agstate )
-    if( 1 == lulcdat[tstyr][ichrt].agstate || 2 == lulcdat[tstyr][ichrt].agstate || 3 == lulcdat[tstyr][ichrt].agstate )
+    if( 1 == lulcdat[tstyr][ichrt].agstate || 2 == lulcdat[tstyr][ichrt].agstate || 3 == lulcdat[tstyr][ichrt].agstate || 4 == lulcdat[tstyr][ichrt].agstate || 5 == lulcdat[tstyr][ichrt].agstate || 6 == lulcdat[tstyr][ichrt].agstate)
     {
       telmnt[0].cohort[ichrt].agcmnt = telmnt[0].lcluc.getCommunityType( lulcdat[tstyr][ichrt].currentveg );
     }
@@ -3538,7 +3538,7 @@ void updateTTEMGridCell( const int& pdyr,
     // Determine soil characteristics for cohort
  
 //  BSF for Chris's runs, set impervious surface to be all clay
-   if(telmnt[0].cohort[ichrt].agstate == 4)
+   if(telmnt[0].cohort[ichrt].agstate == 7)
    {
     telmnt[0].tem.soil.setPCTSILT( 0.0 );
     telmnt[0].tem.soil.setPCTSAND( 0.0 );
