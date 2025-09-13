@@ -1124,23 +1124,20 @@ void Ttem45::cropDynamics( const int& pdm, const int& pdyr, const double& nmax_g
   dtmax = 0.03333;
 
 #ifndef CALIBRATE_TEM
-  if(ag.state == 1 || ag.state == 3)
-  {
+
+//  Irrigated are irigated crops (ag.state = 1), irrigated pasture
+//  (ag.state = 3) and irrigated turf (ag.state = 5)
+//  Fertilized are all crops, pasture, and turf (so all)
+//  Perennial crops (ie switchgras) are not fertilized or irrigated
+
+  ag.fertflag = 1;
+  ag.irrgflag = 0;
+  if(ag.state == 1 || ag.state == 3 || ag.state == 5)
+  { 
     ag.irrgflag = 1;
-    ag.fertflag = 1;
-  }
-  else if(ag.state == 2)
-  {
-    ag.irrgflag = 0;
-    ag.fertflag = 1;
-  }
-  else
-  {
-    ag.irrgflag = 0;
-    ag.fertflag = 0;
   }
 
-  if(ag.getISPERENNIAL(ag.cmnt) == 1 && ag.state == 1)
+  if(ag.getISPERENNIAL(ag.cmnt) == 1 && ag.state == 2)
   {
     ag.irrgflag = 0;
     ag.fertflag = 0;
@@ -1167,15 +1164,15 @@ void Ttem45::cropDynamics( const int& pdm, const int& pdyr, const double& nmax_g
 //
   ag.fertn = ZERO;
 
-  if((ag.fertflag == 1) && (ag.state == 1) ) {
+  if((ag.fertflag == 1) && (ag.state == 1 || ag.state == 2) ) {
     ag.fertn = ag.getFERTNCROP()/12000.;
   }
-  else if (ag.fertflag == 1 && ag.state == 2 )
+  else if (ag.fertflag == 1 && (ag.state == 3 || ag.state == 4) )
   {
     ag.fertn = ag.getFERTNPASTURE()/12000.;
 
   }
-  else if (ag.fertflag==1 && ag.state == 3)
+  else if (ag.fertflag == 1 && (ag.state == 5 || ag.state == 6))
   {
    ag.fertn = 15.0/12.;
   }
@@ -1747,7 +1744,7 @@ void Ttem45::delta( const int& pdm,
   
 //  ++delta_count;
 //  if( delta_count > 1000000 ) { exit(-1); }
-  if( 0 == ag.state || 4 == ag.state )
+  if( 0 == ag.state || 7 == ag.state )
   {
     natvegDynamics( pdm, pdyr, nmax_grow, pstate );
   }
@@ -3881,7 +3878,8 @@ if(soilc_new/soiln_new < microbe.getCNSOIL(veg.cmnt)-10.0)
 //  soil.setSONINP((veg.getNNF(veg.cmnt)*0.234 * (12.0*soil.getEET()/10.0)+ 0.172 ) /(10.0*12.0));
 //  veg.setVEGNINP(((1.0-veg.getNNF(veg.cmnt))*0.234 * (12.0*soil.getEET()/10.0)+ 0.172) /(10.0*12.0));
 
-  if(veg.cmnt == 1 || veg.cmnt == 15) { veg.setVEGNINP(0.0); }
+//  if(veg.cmnt == 1 || veg.cmnt == 15) { veg.setVEGNINP(0.0); }
+  if(veg.cmnt == 1 || ag.state == 7) { veg.setVEGNINP(0.0); }
 //  if(initFlag == 1) { cout << "natveg = " << soil.getSONINP() << " " << veg.getVEGNINP() << " " << soil.getEET() << endl; } 
 #endif
 //
@@ -4008,7 +4006,7 @@ if(soilc_new/soiln_new < microbe.getCNSOIL(veg.cmnt)-10.0)
                 atms.getAOT40() );
 
 // set ET zero for impervious surface
-  if(ag.state == 4)
+  if(ag.state == 7)
   {
     veg.setPET( 0.0);
     soil.setSONINP(0.0);
@@ -5728,7 +5726,7 @@ else if ( disturbflag ==  4 && pdm == (disturbmonth-1)) //hurricane-strength sto
 
   // Determine effect of air temperature on GPP (i.e. temp)
 
-  if( 1 == ag.state )
+  if( 1 == ag.state || 2 == ag.state )
   {
     veg.setTEMP( ag.cmnt, atms.getTAIRD(),pdyr );
     veg.phenology(ag.cmnt,
@@ -5784,7 +5782,7 @@ cseed = 0.0;
     //   begin to grow, crops are assumed to die and resulting
     //   detritus is added to soil organic carbon and nitrogen
 
-    if( 1 == ag.state
+    if( (1 == ag.state || 2 == ag.state)
         && ag.getGROWDD() > ag.getGDDSEED(ag.cmnt)
         && atms.getTAIRN() <= ag.getTKILL(ag.cmnt) )
     {
@@ -5829,13 +5827,14 @@ cseed = 0.0;
   }
 
 //   set irrigation
- if( ag.irrgflag == 1 && ag.state >= 0 && ag.getGROWDD() >= ag.getGDDSEED(ag.cmnt) && ag.getGROWDD() <=ag.getGDDHARVST(ag.cmnt)) {
-//  if(atms.getYRPREC() < 200)
+ if( ag.irrgflag == 1 && (ag.state == 1 || ag.state == 2) && ag.getGROWDD() >= ag.getGDDSEED(ag.cmnt) && ag.getGROWDD() <=ag.getGDDHARVST(ag.cmnt)) {
+   ag.irrigate = y[I_SM] - soil.getAWCAPMM();
+/*  if(atms.getYRPREC() < 200)
   if(atms.getPREC() < 200)
    {
     ag.irrigate = 200.0-atms.getPREC();
 //    cout << "prec,irrigate = " << pdm << " " << pdyr << " " << atms.getPREC() << " " << ag.irrigate << endl;
-   }
+   } */
   }
   else
   {
@@ -5843,13 +5842,14 @@ cseed = 0.0;
   }
 
 
- if( ag.irrgflag == 1 && ag.state > 1) {
-//  if(atms.getYRPREC() < 200)
+ if( ag.irrgflag == 1 && ag.state > 2) {
+    ag.irrigate = y[I_SM] - soil.getAWCAPMM();
+/*  if(atms.getYRPREC() < 200)
   if(atms.getPREC() < 200)
 //  if(atms.getPREC() + soil.getAVLH2O() < 50)
    {
     ag.irrigate = 200.0-atms.getPREC();
-   }
+   } */
   }
   else
   {
@@ -6079,7 +6079,7 @@ cseed = 0.0;
 
 //if(ag.state == 1 && initFlag == 1) {
 //cout << "harvest = " << ag.state << " " << ag.getGROWDD() << " " << ag.getGDDHARVST(ag.cmnt) << " " << pdyr << " " << pdm << endl;}
-  if( (1 == ag.state) && ((ag.getGROWDD() >= ag.getGDDHARVST(ag.cmnt)) || (harcnt == 0 && pdm == 9))    && (0 == ag.getFROSTFLAG() ) )
+  if( (1 == ag.state || 2 == ag.state) && ((ag.getGROWDD() >= ag.getGDDHARVST(ag.cmnt)) || (harcnt == 0 && pdm == 9))    && (0 == ag.getFROSTFLAG() ) )
 //  if( (1 == ag.state) && (ag.getGROWDD() >= ag.getGDDHARVST(ag.cmnt)) && (0 == ag.getFROSTFLAG() ) )
   {
 //    ag.harvest( pdm, y[I_SEEDC], y[I_SEEDN], veg.getVEGC() - ag.getCROPSEEDC( ag.cmnt ), veg.getVEGN() - ag.getCROPSEEDSTON( ag.cmnt ) );
@@ -6163,7 +6163,7 @@ cseed = 0.0;
       ag.setPREVPROD1C( ag.getPREVPROD1C()+  cabove );
  } */
 
- if( 2 == ag.state ) // pasture
+ if( 3 == ag.state || 4 == ag.state ) // pasture
   {
    ag.grazing(  y[I_LEAFC], y[I_SAPWOODC], y[I_HEARTWOODC], y[I_LABILEC],
                 y[I_LEAFN], y[I_SAPWOODN], y[I_HEARTWOODN], y[I_LABILEN],
@@ -6185,7 +6185,7 @@ cseed = 0.0;
         }     
 //ag.setNoGrazing();
 
- if( 3 == ag.state && (ag.getGROWDD() >= ag.getGDDSEED(ag.cmnt) && ag.getGROWDD() <= ag.getGDDHARVST(ag.cmnt))) // turflawn
+ if( (5 == ag.state || 6 == ag.state) && (ag.getGROWDD() >= ag.getGDDSEED(ag.cmnt) && ag.getGROWDD() <= ag.getGDDHARVST(ag.cmnt))) // turflawn
   {
       if((y[I_LEAFC]+y[I_SAPWOODC]+y[I_HEARTWOODC]+y[I_ROOTC]) == 0.0)
       {
@@ -6428,7 +6428,7 @@ cseed = 0.0;
   #endif
 
 
-  if( 1 == ag.state && ag.getPRVCROPNPP() < veg.getNPP() )
+  if( (1 == ag.state || 2 == ag.state) && ag.getPRVCROPNPP() < veg.getNPP() )
   {
      ag.setPRVCROPNPP( veg.getNPP() );
   }
@@ -6437,7 +6437,7 @@ cseed = 0.0;
 // Reset growing degree days to zero if crops were
 // harvested this month
 
-  if( 1 == ag.state && ag.getGROWDD() >= ag.getGDDHARVST(ag.cmnt) )
+  if( (1 == ag.state || 2 == ag.state) && ag.getGROWDD() >= ag.getGDDHARVST(ag.cmnt) )
   {
     ag.setGROWDD( ZERO );
   }
@@ -6796,7 +6796,7 @@ if(ag.state == 0)
       return 1;
   }
 }
-else if (ag.state == 1 || ag.state == 2 || ag.state == 3)
+else if (ag.state == 1 || ag.state == 2 || ag.state == 3 || ag.state == 4 || ag.state == 5 || ag.state == 6)
 {
 //          cout << "diag = " << (veg.getVEGN()+y[I_SOLN]) - ( vegneq+soilneq ) << " " << veg.getVEGN()-vegneq << " " << y[I_SOLN]-soilneq << " " << (veg.getVEGC()+y[I_SOLC]) - (vegceq+soilceq ) << " " << veg.getVEGC()-vegceq << " " << y[I_SOLC]-soilceq << " " << atms.yrrain + atms.yrsnowfall - soil.yreet -  soil.yrrrun - soil.yrsrun + ag.yrirrig << " " << fabs(yrnep - ag.yrformPROD1C) << endl;
   if( 1 == nfeed && 1 == rheqflag
