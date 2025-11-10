@@ -1504,7 +1504,7 @@ void Tveg45::petsw( const int& pdcmnt,
                         const double& vpdn,
                         const double& snowcover,
                         const double& precip,
-                        const double& soilmmmo,
+                        const double& esoilmmmo,
                         const double& avlh2o,
                         const double& elev )
 
