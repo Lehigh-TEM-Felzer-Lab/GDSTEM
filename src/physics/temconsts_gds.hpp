@@ -89,7 +89,7 @@ const int NUMATMS = 18;
 // Maximum number of vegetation types
 #ifndef NUMVEG_CONST
 #define NUMVEG_CONST
-  const int NUMVEG = 61;
+  const int NUMVEG = 62;
 #endif
 
 // TEMVEG index of pasture
