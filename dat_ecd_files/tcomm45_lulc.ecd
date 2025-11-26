@@ -1037,4 +1037,21 @@
     <subtype5>-99</subtype5>
     <pcttype5>0.00</pcttype5>
   </temveg>
+
+  <temveg type = "62"
+    description = "Rangeland"
+    developedBy = "Erwan Monier"
+    updated = "20251125">
+    <numtype>1</numtype>
+    <subtype1>21</subtype1>
+    <pcttype1>100.00</pcttype1>
+    <subtype2>-99</subtype2>
+    <pcttype2>0.00</pcttype2>
+    <subtype3>-99</subtype3>
+    <pcttype3>0.00</pcttype3>
+    <subtype4>-99</subtype4>
+    <pcttype4>0.00</pcttype4>
+    <subtype5>-99</subtype5>
+    <pcttype5>0.00</pcttype5>
+  </temveg>
 </communityECD>
