@@ -254,9 +254,7 @@ int main()
   int gisend;
   int ichrt;
   int l;
-//  static double mxtot[500][3500];
-//  fixed problem from Sonya version
-  static double mxtot[600][63000];
+  static double mxtot[MAXRTIME][MAXGRID];
 
 
   long grdcnt;
