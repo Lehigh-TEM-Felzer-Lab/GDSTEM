@@ -5827,34 +5827,14 @@ cseed = 0.0;
   }
 
 //   set irrigation
- if( ag.irrgflag == 1 && (ag.state == 1 || ag.state == 2) && ag.getGROWDD() >= ag.getGDDSEED(ag.cmnt) && ag.getGROWDD() <=ag.getGDDHARVST(ag.cmnt)) {
-   ag.irrigate = y[I_SM] - soil.getAWCAPMM();
-/*  if(atms.getYRPREC() < 200)
-  if(atms.getPREC() < 200)
-   {
-    ag.irrigate = 200.0-atms.getPREC();
-//    cout << "prec,irrigate = " << pdm << " " << pdyr << " " << atms.getPREC() << " " << ag.irrigate << endl;
-   } */
+ if( ag.irrgflag == 1 &&  ag.getGROWDD() >= ag.getGDDSEED(ag.cmnt) && ag.getGROWDD() <=ag.getGDDHARVST(ag.cmnt)) {
+   ag.irrigate = soil.getAVLH2O() - soil.getAWCAPMM();
   }
   else
   {
    ag.irrigate = 0.0;
   }
 
-
- if( ag.irrgflag == 1 && ag.state > 2) {
-    ag.irrigate = y[I_SM] - soil.getAWCAPMM();
-/*  if(atms.getYRPREC() < 200)
-  if(atms.getPREC() < 200)
-//  if(atms.getPREC() + soil.getAVLH2O() < 50)
-   {
-    ag.irrigate = 200.0-atms.getPREC();
-   } */
-  }
-  else
-  {
-   ag.irrigate = 0.0;
-  }
 
 
   // Run TEM for a monthly time step
